@@ -5,6 +5,7 @@ const Nav = () => (
     <Link href="/sell">
       <a>Sell!</a>
     </Link>
+    <br />
     <Link href="/">
       <a>Home!</a>
     </Link>
