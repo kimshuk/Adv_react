@@ -445,7 +445,7 @@ function createClient(_ref) {
   });
 }
 
-/* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_next_with_apollo___default()(createClient));
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_next_with_apollo___default()(createClient));
 
 /***/ }),
 
@@ -27137,7 +27137,7 @@ function (_App) {
   return MyApp;
 }(__WEBPACK_IMPORTED_MODULE_2_next_app___default.a);
 
-/* harmony default export */ __webpack_exports__["default"] = (MyApp);
+/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_5__lib_withData__["a" /* default */])(MyApp));
     (function (Component, route) {
       if(!Component) return
       if (false) return
