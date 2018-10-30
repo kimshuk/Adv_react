@@ -1,7 +1,7 @@
 module.exports =
 __NEXT_REGISTER_PAGE('/_app', function() {
           var comp =
-      webpackJsonp([2],{
+      webpackJsonp([1],{
 
 /***/ "./components/Header.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -22299,7 +22299,7 @@ if (false) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* unused harmony export css */
-/* unused harmony export keyframes */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return keyframes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return injectGlobal; });
 /* unused harmony export isStyledComponent */
 /* unused harmony export consolidateStreamedStyles */
