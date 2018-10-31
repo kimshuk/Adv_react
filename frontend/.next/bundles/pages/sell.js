@@ -22,7 +22,7 @@ __NEXT_REGISTER_PAGE('/sell', function() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__lib_formatMoney__ = __webpack_require__("./lib/formatMoney.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ErrorMessage__ = __webpack_require__("./components/ErrorMessage.js");
 
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/CreateItem.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/CreateItem.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  mutation CREATE_ITEM_MUTATION(\n    $title: String!\n    $description: String!\n    $price: Int!\n    $image: String\n    $largeImage: String\n  ) {\n    createItem(\n      title: $title\n      description: $description\n      price: $price\n      image: $image\n      largeImage: $largeImage\n    ) {\n      id\n    }\n  }\n"]);
 
@@ -76,11 +76,11 @@ function (_Component) {
       enumerable: true,
       writable: true,
       value: {
-        title: "turtle",
-        description: "Giant 100 yrs old turtle",
-        image: "turtle1.jpg",
-        largeImage: "turtle-large.jpg",
-        price: 2000
+        title: "",
+        description: "",
+        image: "",
+        largeImage: "",
+        price: 0
       }
     }), Object.defineProperty(_assertThisInitialized(_this), "handleChange", {
       configurable: true,
@@ -95,6 +95,56 @@ function (_Component) {
 
         _this.setState(_defineProperty({}, name, val));
       }
+    }), Object.defineProperty(_assertThisInitialized(_this), "uploadFile", {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function () {
+        var _value = _asyncToGenerator(
+        /*#__PURE__*/
+        __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee(e) {
+          var files, data, res, file;
+          return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  console.log("Uploading File...");
+                  files = e.target.files;
+                  data = new FormData();
+                  data.append("file", files[0]);
+                  data.append("upload_preset", "sickfits");
+                  _context.next = 7;
+                  return fetch("https://api.cloudinary.com/v1_1/dyt6ndscp/image/upload/", {
+                    method: "POST",
+                    body: data
+                  });
+
+                case 7:
+                  res = _context.sent;
+                  _context.next = 10;
+                  return res.json();
+
+                case 10:
+                  file = _context.sent;
+                  console.log("file: ", file);
+
+                  _this.setState({
+                    image: file.secure_url,
+                    largeImage: file.eager[0].secure_url
+                  });
+
+                case 13:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee, this);
+        }));
+
+        return function value(_x) {
+          return _value.apply(this, arguments);
+        };
+      }()
     }), _temp));
   }
 
@@ -108,7 +158,7 @@ function (_Component) {
         variables: this.state,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 68
         }
       }, function (createItem, _ref2) {
         var loading = _ref2.loading,
@@ -119,20 +169,20 @@ function (_Component) {
           function () {
             var _ref3 = _asyncToGenerator(
             /*#__PURE__*/
-            __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee(e) {
+            __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee2(e) {
               var res;
-              return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+              return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
                 while (1) {
-                  switch (_context.prev = _context.next) {
+                  switch (_context2.prev = _context2.next) {
                     case 0:
                       // stop the form from submitting
                       e.preventDefault(); // call the mutation
 
-                      _context.next = 3;
+                      _context2.next = 3;
                       return createItem();
 
                     case 3:
-                      res = _context.sent;
+                      res = _context2.sent;
                       // change them to the single item page
                       console.log(res);
                       __WEBPACK_IMPORTED_MODULE_4_next_router___default.a.push({
@@ -144,38 +194,63 @@ function (_Component) {
 
                     case 6:
                     case "end":
-                      return _context.stop();
+                      return _context2.stop();
                   }
                 }
-              }, _callee, this);
+              }, _callee2, this);
             }));
 
-            return function (_x) {
+            return function (_x2) {
               return _ref3.apply(this, arguments);
             };
           }(),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 48
+            lineNumber: 70
           }
         }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__ErrorMessage__["a" /* default */], {
           error: error,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 62
+            lineNumber: 84
           }
         }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("fieldset", {
           disabled: loading,
           "aria-busy": loading,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 63
+            lineNumber: 85
           }
         }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("label", {
+          htmlFor: "file",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 86
+          }
+        }, "Image", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("input", {
+          type: "file",
+          id: "file",
+          name: "file",
+          placeholder: "Upload an image",
+          required: true,
+          onChange: _this2.uploadFile,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 88
+          }
+        }), _this2.state.image && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+          width: "200",
+          src: _this2.state.image,
+          alt: "Upload preview",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 97
+          }
+        })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("label", {
           htmlFor: "title",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 64
+            lineNumber: 104
           }
         }, "Title", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("input", {
           type: "text",
@@ -187,13 +262,13 @@ function (_Component) {
           onChange: _this2.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 106
           }
         })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("label", {
           htmlFor: "price",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 76
+            lineNumber: 116
           }
         }, "Price", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("input", {
           type: "number",
@@ -205,13 +280,13 @@ function (_Component) {
           onChange: _this2.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 78
+            lineNumber: 118
           }
         })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("label", {
           htmlFor: "description",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 88
+            lineNumber: 128
           }
         }, "Description", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("textarea", {
           id: "description",
@@ -222,13 +297,13 @@ function (_Component) {
           onChange: _this2.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 90
+            lineNumber: 130
           }
         })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("button", {
           type: "submit",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 99
+            lineNumber: 139
           }
         }, "Submit")));
       });
@@ -252,7 +327,7 @@ function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("./node_modules/next/node_modules/prop-types/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/ErrorMessage.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/ErrorMessage.js";
 
 
 
@@ -15788,7 +15863,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_CreateItem__ = __webpack_require__("./components/CreateItem.js");
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/pages/sell.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/pages/sell.js";
 
 
 
