@@ -1,3 +1,5 @@
+const bcrypt = require("bcryptjs");
+
 const Mutations = {
   async createItem(parent, args, ctx, info) {
     // TODO: Check if they are logged in
@@ -41,6 +43,12 @@ const Mutations = {
 
     // 3. Delete it!
     return ctx.db.mutation.deleteItem({ where }, info);
+  },
+  async signup(parent, args, ctx, info) {
+    // lowercase their email
+    args.email = args.email.toLowerCase();
+    // has their password
+    const password = await bcrypt.hash(args.password, 10);
   }
 };
 
