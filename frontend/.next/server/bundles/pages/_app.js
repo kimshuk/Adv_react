@@ -249,7 +249,9 @@ var Meta = function Meta() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_NavStyles__ = __webpack_require__("./components/styles/NavStyles.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__User__ = __webpack_require__("./components/User.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Signout__ = __webpack_require__("./components/Signout.js");
 var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Nav.js";
+
 
 
 
@@ -260,74 +262,79 @@ var Nav = function Nav() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__User__["b" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     }
   }, function (_ref) {
     var me = _ref.data.me;
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__styles_NavStyles__["a" /* default */], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 9
+        lineNumber: 10
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
       href: "/items",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 10
+        lineNumber: 11
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 11
+        lineNumber: 12
       }
     }, "Shop")), me && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_react__["Fragment"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14
+        lineNumber: 15
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
       href: "/sell",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 16
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 17
       }
     }, "Sell")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
       href: "/orders",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 19
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 20
       }
     }, "Orders")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
       href: "/me",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 22
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 23
       }
-    }, "Account"))), !me && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
+    }, "Account")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Signout__["a" /* default */], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      }
+    })), !me && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
       href: "/signup",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 29
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 30
       }
     }, "Sign In")));
   });
@@ -442,6 +449,54 @@ function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (Page);
+
+/***/ }),
+
+/***/ "./components/Signout.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo__ = __webpack_require__("react-apollo");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_apollo__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag__ = __webpack_require__("graphql-tag");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_graphql_tag__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__User__ = __webpack_require__("./components/User.js");
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Signout.js";
+
+var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  mutation SIGN_OUT_MUTATION {\n    signout {\n      message\n    }\n  }\n"]);
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var SIGN_OUT_MUTATION = __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject);
+
+var Signout = function Signout(props) {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["Mutation"], {
+    mutation: SIGN_OUT_MUTATION,
+    refetchQueries: [{
+      query: __WEBPACK_IMPORTED_MODULE_3__User__["a" /* CURRENT_USER_QUERY */]
+    }],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    }
+  }, function (signout) {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
+      onClick: signout,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      }
+    }, "Sign Out");
+  });
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (Signout);
 
 /***/ }),
 
