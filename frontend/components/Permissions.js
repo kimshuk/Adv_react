@@ -3,6 +3,7 @@ import Error from "./ErrorMessage";
 import gql from "graphql-tag";
 import Table from "./styles/Table";
 import SickButton from "./styles/SickButton";
+import PropTypes from "prop-types";
 
 const possiblePermissions = [
   "ADMIN",
@@ -57,6 +58,17 @@ const Permissions = props => (
 );
 
 class User extends React.Component {
+  static PropTypes = {
+    user: PropTypes.shape({
+      name: PropTypes.string,
+      email: PropTypes.string,
+      id: PropTypes.string,
+      permissions: PropTypes.array
+    }).isRequired
+  };
+  state = {
+    permissions: this.props.user.permissions
+  };
   render() {
     const user = this.props.user;
     return (
