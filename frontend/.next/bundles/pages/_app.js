@@ -469,7 +469,7 @@ var User = function User(props) {
   });
 };
 
-User.PropTypes = {
+User.propTypes = {
   children: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.func.isRequired
 };
 /* harmony default export */ __webpack_exports__["b"] = (User);
