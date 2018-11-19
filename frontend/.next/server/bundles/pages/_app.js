@@ -72,22 +72,91 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/Cart.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_CartStyles__ = __webpack_require__("./components/styles/CartStyles.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_Supreme__ = __webpack_require__("./components/styles/Supreme.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles_CloseButton__ = __webpack_require__("./components/styles/CloseButton.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_SickButton__ = __webpack_require__("./components/styles/SickButton.js");
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Cart.js";
+
+
+
+
+
+
+var Cart = function Cart() {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__styles_CartStyles__["a" /* default */], {
+    open: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("header", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__styles_CloseButton__["a" /* default */], {
+    title: "close",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    }
+  }, "\xD7"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__styles_Supreme__["a" /* default */], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    }
+  }, "Your Cart"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    }
+  }, "You Have __ Items in your cart.")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("footer", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    }
+  }, "$10.10"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__styles_SickButton__["a" /* default */], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    }
+  }, "Checkout")));
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (Cart);
+
+/***/ }),
+
 /***/ "./components/Header.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Nav__ = __webpack_require__("./components/Nav.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link__ = __webpack_require__("next/link");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_styled_components__ = __webpack_require__("styled-components");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_styled_components__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link__ = __webpack_require__("next/link");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_link__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_nprogress__ = __webpack_require__("nprogress");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_nprogress___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_nprogress__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_next_router__ = __webpack_require__("next/router");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_next_router__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_nprogress__ = __webpack_require__("nprogress");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_nprogress___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_nprogress__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Nav__ = __webpack_require__("./components/Nav.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Cart__ = __webpack_require__("./components/Cart.js");
 var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Header.js";
+
 
 
 
@@ -97,16 +166,16 @@ var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Header.js";
 
 __WEBPACK_IMPORTED_MODULE_4_next_router___default.a.onRouteChangeStart = function () {
   console.log("onRouteChangeStart Triggered");
-  __WEBPACK_IMPORTED_MODULE_5_nprogress___default.a.start();
+  __WEBPACK_IMPORTED_MODULE_3_nprogress___default.a.start();
 };
 
 __WEBPACK_IMPORTED_MODULE_4_next_router___default.a.onRouteChangeComplete = function () {
   console.log("onRouteChangeComplete Triggered");
-  __WEBPACK_IMPORTED_MODULE_5_nprogress___default.a.done();
+  __WEBPACK_IMPORTED_MODULE_3_nprogress___default.a.done();
 };
 
 __WEBPACK_IMPORTED_MODULE_4_next_router___default.a.onRouteChangeError = function () {
-  __WEBPACK_IMPORTED_MODULE_5_nprogress___default.a.done();
+  __WEBPACK_IMPORTED_MODULE_3_nprogress___default.a.done();
   console.log("onRouteChangeError Triggered");
 };
 
@@ -129,52 +198,52 @@ var Header = function Header() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(StyledHeader, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 60
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     className: "bar",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 61
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Logo, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
-    }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_next_link___default.a, {
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 62
     }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
+    href: "/",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 63
     }
-  }, "Sick Fits"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Nav__["a" /* default */], {
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 64
+    }
+  }, "Sick Fits"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Nav__["a" /* default */], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
     }
   })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     className: "sub-bar",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 69
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 70
     }
-  }, "Search")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+  }, "Search")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__Cart__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 72
     }
-  }, "Cart"));
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (Header);
@@ -548,6 +617,42 @@ User.propTypes = {
 
 /***/ }),
 
+/***/ "./components/styles/CartStyles.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_components__);
+
+var CartStyles = __WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
+  displayName: "CartStyles",
+  componentId: "s1tvog53-0"
+})(["padding:20px;position:relative;background:white;position:fixed;height:100%;top:0;right:0;width:40%;min-width:500px;bottom:0;transform:translateX(100%);transition:all 0.3s;box-shadow:0 0 10px 3px rgba(0,0,0,0.2);z-index:5;display:grid;grid-template-rows:auto 1fr auto;", ";header{border-bottom:5px solid ", ";margin-bottom:2rem;padding-bottom:2rem;}footer{border-top:10px double ", ";margin-top:2rem;padding-top:2rem;display:grid;grid-template-columns:auto auto;align-items:center;font-size:3rem;font-weight:900;p{margin:0;}}ul{margin:0;padding:0;list-style:none;overflow:scroll;}"], function (props) {
+  return props.open && "transform: translateX(0);";
+}, function (props) {
+  return props.theme.black;
+}, function (props) {
+  return props.theme.black;
+});
+/* harmony default export */ __webpack_exports__["a"] = (CartStyles);
+
+/***/ }),
+
+/***/ "./components/styles/CloseButton.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_components__);
+
+var CloseButton = __WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.button.withConfig({
+  displayName: "CloseButton",
+  componentId: "s1seb878-0"
+})(["background:black;color:white;font-size:3rem;border:0;position:absolute;z-index:2;right:0;"]);
+/* harmony default export */ __webpack_exports__["a"] = (CloseButton);
+
+/***/ }),
+
 /***/ "./components/styles/NavStyles.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -566,6 +671,38 @@ var NavStyles = __WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.ul.wit
   return props.theme.lightgrey;
 });
 /* harmony default export */ __webpack_exports__["a"] = (NavStyles);
+
+/***/ }),
+
+/***/ "./components/styles/SickButton.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_components__);
+
+var SickButton = __WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.button.withConfig({
+  displayName: "SickButton",
+  componentId: "l04z44-0"
+})(["background:red;color:white;font-weight:500;border:0;border-radius:0;text-transform:uppercase;font-size:2rem;padding:0.8rem 1.5rem;transform:skew(-2deg);display:inline-block;transition:all 0.5s;&[disabled]{opacity:0.5;}"]);
+/* harmony default export */ __webpack_exports__["a"] = (SickButton);
+
+/***/ }),
+
+/***/ "./components/styles/Supreme.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_components__);
+
+var Supreme = __WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.h3.withConfig({
+  displayName: "Supreme",
+  componentId: "xv30qb-0"
+})(["background:", ";color:white;display:inline-block;padding:4px 5px;transform:skew(-3deg);margin:0;font-size:4rem;"], function (props) {
+  return props.theme.red;
+});
+/* harmony default export */ __webpack_exports__["a"] = (Supreme);
 
 /***/ }),
 
