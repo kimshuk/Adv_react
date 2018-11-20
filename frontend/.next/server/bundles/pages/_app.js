@@ -76,6 +76,8 @@ module.exports =
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LOCAL_STATE_QUERY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return TOGGLE_CART_MUTATION; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo__ = __webpack_require__("react-apollo");
@@ -88,7 +90,8 @@ module.exports =
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__styles_SickButton__ = __webpack_require__("./components/styles/SickButton.js");
 var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Cart.js";
 
-var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query {\n    cartOpen @client\n  }\n"]);
+var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query {\n    cartOpen @client\n  }\n"]),
+    _templateObject2 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  mutation {\n    toggleCart @client\n  }\n"]);
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -100,63 +103,74 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 var LOCAL_STATE_QUERY = __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject);
+var TOGGLE_CART_MUTATION = __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject2);
 
 var Cart = function Cart() {
-  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["Query"], {
-    query: LOCAL_STATE_QUERY,
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["Mutation"], {
+    mutation: TOGGLE_CART_MUTATION,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 22
     }
-  }, function (_ref) {
-    var data = _ref.data;
-    return console.log(data) || __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__styles_CartStyles__["a" /* default */], {
-      open: data.cartOpen,
+  }, function (toggleCart) {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["Query"], {
+      query: LOCAL_STATE_QUERY,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 24
       }
-    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("header", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      }
-    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__styles_CloseButton__["a" /* default */], {
-      title: "close",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      }
-    }, "\xD7"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__styles_Supreme__["a" /* default */], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22
-      }
-    }, "Your Cart"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 23
-      }
-    }, "You Have __ Items in your cart.")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("footer", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 26
-      }
-    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 27
-      }
-    }, "$10.10"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__styles_SickButton__["a" /* default */], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 28
-      }
-    }, "Checkout")));
+    }, function (_ref) {
+      var data = _ref.data;
+      return console.log(data) || __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__styles_CartStyles__["a" /* default */], {
+        open: data.cartOpen,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("header", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__styles_CloseButton__["a" /* default */], {
+        onClick: toggleCart,
+        title: "close",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29
+        }
+      }, "\xD7"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__styles_Supreme__["a" /* default */], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32
+        }
+      }, "Your Cart"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33
+        }
+      }, "You Have __ Items in your cart.")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("footer", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
+        }
+      }, "$10.10"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__styles_SickButton__["a" /* default */], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38
+        }
+      }, "Checkout")));
+    });
   });
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Cart);
+/* harmony default export */ __webpack_exports__["c"] = (Cart);
+
 
 /***/ }),
 
@@ -259,7 +273,7 @@ var Header = function Header() {
       fileName: _jsxFileName,
       lineNumber: 70
     }
-  }, "Search")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__Cart__["a" /* default */], {
+  }, "Search")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__Cart__["c" /* default */], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 72
@@ -337,9 +351,12 @@ var Meta = function Meta() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link__ = __webpack_require__("next/link");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_NavStyles__ = __webpack_require__("./components/styles/NavStyles.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__User__ = __webpack_require__("./components/User.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Signout__ = __webpack_require__("./components/Signout.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_apollo__ = __webpack_require__("react-apollo");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_apollo__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Cart__ = __webpack_require__("./components/Cart.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_NavStyles__ = __webpack_require__("./components/styles/NavStyles.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__User__ = __webpack_require__("./components/User.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Signout__ = __webpack_require__("./components/Signout.js");
 var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Nav.js";
 
 
@@ -348,83 +365,99 @@ var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Nav.js";
 
 
 
+
+
 var Nav = function Nav() {
-  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__User__["b" /* default */], {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__User__["b" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 10
     }
   }, function (_ref) {
     var me = _ref.data.me;
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__styles_NavStyles__["a" /* default */], {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__styles_NavStyles__["a" /* default */], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 10
+        lineNumber: 12
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
       href: "/items",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 11
+        lineNumber: 13
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 14
       }
     }, "Shop")), me && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_react__["Fragment"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 17
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
       href: "/sell",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 18
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 19
       }
     }, "Sell")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
       href: "/orders",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 21
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 22
       }
     }, "Orders")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
       href: "/me",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 24
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 23
-      }
-    }, "Account")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Signout__["a" /* default */], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 25
       }
+    }, "Account")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__Signout__["a" /* default */], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      }
+    }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_apollo__["Mutation"], {
+      mutation: __WEBPACK_IMPORTED_MODULE_3__Cart__["b" /* TOGGLE_CART_MUTATION */],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      }
+    }, function (toggleCart) {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
+        onClick: toggleCart,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29
+        }
+      }, "My Cart");
     })), !me && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
       href: "/signup",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 34
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30
+        lineNumber: 35
       }
     }, "Sign In")));
   });
@@ -748,6 +781,8 @@ var perPage = 4;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_apollo_boost__ = __webpack_require__("apollo-boost");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_apollo_boost___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_apollo_boost__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config__ = __webpack_require__("./config.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Cart__ = __webpack_require__("./components/Cart.js");
+
 
 
 
@@ -766,7 +801,29 @@ function createClient(_ref) {
     },
     // local data
     clientState: {
-      resolvers: {},
+      resolvers: {
+        Mutation: {
+          toggleCart: function toggleCart(_, variables, _ref2) {
+            var cache = _ref2.cache;
+
+            // read the cartOpen value from cache
+            var _cache$readQuery = cache.readQuery({
+              query: __WEBPACK_IMPORTED_MODULE_3__components_Cart__["a" /* LOCAL_STATE_QUERY */]
+            }),
+                cartOpen = _cache$readQuery.cartOpen;
+
+            console.log(cartOpen); // Write the cart State to the opposite
+
+            var data = {
+              data: {
+                cartOpen: !cartOpen
+              }
+            };
+            cache.writeData(data);
+            return data;
+          }
+        }
+      },
       defaults: {
         cartOpen: true
       }
