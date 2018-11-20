@@ -9,61 +9,82 @@ __NEXT_REGISTER_PAGE('/_app', function() {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_CartStyles__ = __webpack_require__("./components/styles/CartStyles.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_Supreme__ = __webpack_require__("./components/styles/Supreme.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles_CloseButton__ = __webpack_require__("./components/styles/CloseButton.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_SickButton__ = __webpack_require__("./components/styles/SickButton.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo__ = __webpack_require__("./node_modules/react-apollo/react-apollo.browser.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_apollo__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag__ = __webpack_require__("./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_graphql_tag__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles_CartStyles__ = __webpack_require__("./components/styles/CartStyles.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_Supreme__ = __webpack_require__("./components/styles/Supreme.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__styles_CloseButton__ = __webpack_require__("./components/styles/CloseButton.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__styles_SickButton__ = __webpack_require__("./components/styles/SickButton.js");
 var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Cart.js";
 
+var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query {\n    cartOpen @client\n  }\n"]);
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
 
 
+
+
+
+
+var LOCAL_STATE_QUERY = __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject);
 
 var Cart = function Cart() {
-  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__styles_CartStyles__["a" /* default */], {
-    open: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("header", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__styles_CloseButton__["a" /* default */], {
-    title: "close",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    }
-  }, "\xD7"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__styles_Supreme__["a" /* default */], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    }
-  }, "Your Cart"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    }
-  }, "You Have __ Items in your cart.")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("footer", {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["Query"], {
+    query: LOCAL_STATE_QUERY,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
     }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    }
-  }, "$10.10"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__styles_SickButton__["a" /* default */], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    }
-  }, "Checkout")));
+  }, function (_ref) {
+    var data = _ref.data;
+    return console.log(data) || __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__styles_CartStyles__["a" /* default */], {
+      open: data.cartOpen,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      }
+    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("header", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      }
+    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__styles_CloseButton__["a" /* default */], {
+      title: "close",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      }
+    }, "\xD7"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__styles_Supreme__["a" /* default */], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      }
+    }, "Your Cart"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      }
+    }, "You Have __ Items in your cart.")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("footer", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      }
+    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      }
+    }, "$10.10"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__styles_SickButton__["a" /* default */], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      }
+    }, "Checkout")));
+  });
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (Cart);
@@ -662,10 +683,17 @@ function createClient(_ref) {
     request: function request(operation) {
       operation.setContext({
         fetchOptions: {
-          credentials: 'include'
+          credentials: "include"
         },
         headers: headers
       });
+    },
+    // local data
+    clientState: {
+      resolvers: {},
+      defaults: {
+        cartOpen: true
+      }
     }
   });
 }
