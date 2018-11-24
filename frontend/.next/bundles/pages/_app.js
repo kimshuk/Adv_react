@@ -147,7 +147,9 @@ var Cart = function Cart() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("./node_modules/next/node_modules/prop-types/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_formatMoney__ = __webpack_require__("./lib/formatMoney.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__RemoveFromCart__ = __webpack_require__("./components/RemoveFromCart.js");
 var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/CartItem.js";
+
 
 
 
@@ -164,7 +166,7 @@ var CartItem = function CartItem(_ref) {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(CartItemStyles, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 23
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
     width: "100",
@@ -172,30 +174,36 @@ var CartItem = function CartItem(_ref) {
     alt: cartItem.item.title,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 24
     }
   }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     className: "cart-item-details",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 25
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 26
     }
   }, cartItem.item.title), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 27
     }
   }, Object(__WEBPACK_IMPORTED_MODULE_3__lib_formatMoney__["a" /* default */])(cartItem.item.price * cartItem.quantity), " - ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("em", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 30
     }
-  }, cartItem.quantity, " \xD7 ", Object(__WEBPACK_IMPORTED_MODULE_3__lib_formatMoney__["a" /* default */])(cartItem.item.price), " each"))));
+  }, cartItem.quantity, " \xD7 ", Object(__WEBPACK_IMPORTED_MODULE_3__lib_formatMoney__["a" /* default */])(cartItem.item.price), " each"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__RemoveFromCart__["a" /* default */], {
+    id: cartItem.id,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    }
+  }));
 };
 
 CartItem.propTypes = {
@@ -601,6 +609,112 @@ function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (Page);
+
+/***/ }),
+
+/***/ "./components/RemoveFromCart.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo__ = __webpack_require__("./node_modules/react-apollo/react-apollo.browser.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_apollo__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_styled_components__ = __webpack_require__("./node_modules/styled-components/dist/styled-components.browser.es.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__("./node_modules/next/node_modules/prop-types/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_graphql_tag__ = __webpack_require__("./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_graphql_tag__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__User__ = __webpack_require__("./components/User.js");
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/RemoveFromCart.js";
+
+var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  mutation removeFromCart($id: ID!) {\n    removeFromCart(id: $id) {\n      id\n    }\n  }\n"]);
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+
+
+var REMOVE_FROM_CART_MUTATION = __WEBPACK_IMPORTED_MODULE_4_graphql_tag___default()(_templateObject);
+var BigButton = __WEBPACK_IMPORTED_MODULE_2_styled_components__["c" /* default */].button.withConfig({
+  displayName: "RemoveFromCart__BigButton",
+  componentId: "emvtd6-0"
+})(["font-size:3rem;background:none;border:0;&:hover{color:", ";cursor:pointer;}"], function (props) {
+  return props.theme.red;
+});
+
+var RemoveFromCart =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(RemoveFromCart, _React$Component);
+
+  function RemoveFromCart() {
+    _classCallCheck(this, RemoveFromCart);
+
+    return _possibleConstructorReturn(this, (RemoveFromCart.__proto__ || Object.getPrototypeOf(RemoveFromCart)).apply(this, arguments));
+  }
+
+  _createClass(RemoveFromCart, [{
+    key: "render",
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["Mutation"], {
+        mutation: REMOVE_FROM_CART_MUTATION,
+        variables: {
+          id: this.props.id
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32
+        }
+      }, function (removeFromCart, _ref) {
+        var loading = _ref.loading,
+            error = _ref.error;
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(BigButton, {
+          disabled: loading,
+          title: "Delete Item",
+          onClick: function onClick() {
+            removeFromCart().catch(function (err) {
+              return alert(err.message);
+            });
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37
+          }
+        }, "\xD7");
+      });
+    }
+  }]);
+
+  return RemoveFromCart;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+Object.defineProperty(RemoveFromCart, "propTypes", {
+  configurable: true,
+  enumerable: true,
+  writable: true,
+  value: {
+    id: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.string.isRequired
+  }
+});
+/* harmony default export */ __webpack_exports__["a"] = (RemoveFromCart);
 
 /***/ }),
 
