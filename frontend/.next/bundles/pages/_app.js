@@ -20,12 +20,18 @@ __NEXT_REGISTER_PAGE('/_app', function() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__styles_Supreme__ = __webpack_require__("./components/styles/Supreme.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__styles_CloseButton__ = __webpack_require__("./components/styles/CloseButton.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__styles_SickButton__ = __webpack_require__("./components/styles/SickButton.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__CartItem__ = __webpack_require__("./components/CartItem.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__lib_calcTotalPrice__ = __webpack_require__("./lib/calcTotalPrice.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__lib_formatMoney__ = __webpack_require__("./lib/formatMoney.js");
 var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Cart.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query {\n    cartOpen @client\n  }\n"]),
     _templateObject2 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  mutation {\n    toggleCart @client\n  }\n"]);
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
 
 
 
@@ -42,7 +48,7 @@ var Cart = function Cart() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__User__["b" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 26
     }
   }, function (_ref) {
     var me = _ref.data.me;
@@ -52,14 +58,14 @@ var Cart = function Cart() {
       mutation: TOGGLE_CART_MUTATION,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 31
       }
     }, function (toggleCart) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["Query"], {
         query: LOCAL_STATE_QUERY,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 33
         }
       }, function (_ref2) {
         var data = _ref2.data;
@@ -67,56 +73,58 @@ var Cart = function Cart() {
           open: data.cartOpen,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 33
+            lineNumber: 36
           }
         }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("header", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 34
+            lineNumber: 37
           }
         }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__styles_CloseButton__["a" /* default */], {
           onClick: toggleCart,
           title: "close",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 38
           }
         }, "\xD7"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__styles_Supreme__["a" /* default */], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 41
           }
         }, me.name.split(" ")[0], "'s Cart"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 42
           }
         }, "You Have ", me.cart.length, " Item", me.cart.length === 1 ? "" : "s", " in your cart.")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("ul", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 44
+            lineNumber: 47
           }
         }, me.cart.map(function (cartItem) {
-          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
+          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__CartItem__["a" /* default */], {
+            key: cartItem.id,
+            cartItem: cartItem,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 46
+              lineNumber: 49
             }
-          }, cartItem.id);
+          });
         })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("footer", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 53
           }
         }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 54
           }
-        }, "$10.10"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_SickButton__["a" /* default */], {
+        }, Object(__WEBPACK_IMPORTED_MODULE_10__lib_formatMoney__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_9__lib_calcTotalPrice__["a" /* default */])(me.cart))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_SickButton__["a" /* default */], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 52
+            lineNumber: 55
           }
         }, "Checkout")));
       });
@@ -126,6 +134,74 @@ var Cart = function Cart() {
 
 /* harmony default export */ __webpack_exports__["c"] = (Cart);
 
+
+/***/ }),
+
+/***/ "./components/CartItem.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components__ = __webpack_require__("./node_modules/styled-components/dist/styled-components.browser.es.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("./node_modules/next/node_modules/prop-types/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_formatMoney__ = __webpack_require__("./lib/formatMoney.js");
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/CartItem.js";
+
+
+
+
+var CartItemStyles = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* default */].li.withConfig({
+  displayName: "CartItem__CartItemStyles",
+  componentId: "s1rm9l7o-0"
+})(["padding:1rem 0;border-bottom:1px solid ", ";display:grid;align-items:center;grid-template-columns:auto 1fr auto;img{margin-right:10px;}h3,p{margin:0;}"], function (props) {
+  return props.theme.lightgrey;
+});
+
+var CartItem = function CartItem(_ref) {
+  var cartItem = _ref.cartItem;
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(CartItemStyles, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
+    width: "100",
+    src: cartItem.item.image,
+    alt: cartItem.item.title,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+    className: "cart-item-details",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    }
+  }, cartItem.item.title), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    }
+  }, Object(__WEBPACK_IMPORTED_MODULE_3__lib_formatMoney__["a" /* default */])(cartItem.item.price * cartItem.quantity), " - ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("em", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    }
+  }, cartItem.quantity, " \xD7 ", Object(__WEBPACK_IMPORTED_MODULE_3__lib_formatMoney__["a" /* default */])(cartItem.item.price), " each"))));
+};
+
+CartItem.propTypes = {
+  cartItem: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.object.isRequired
+};
+/* harmony default export */ __webpack_exports__["a"] = (CartItem);
 
 /***/ }),
 
@@ -591,7 +667,7 @@ var Signout = function Signout(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
 var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/User.js";
 
-var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query {\n    me {\n      id\n      email\n      name\n      permissions\n      cart {\n        id\n        quantity\n      }\n    }\n  }\n"]);
+var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query {\n    me {\n      id\n      email\n      name\n      permissions\n      cart {\n        id\n        quantity\n        item {\n          id\n          title\n          image\n          price\n          description\n        }\n      }\n    }\n  }\n"]);
 
 
 
@@ -609,7 +685,7 @@ var User = function User(props) {
     query: CURRENT_USER_QUERY,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 28
     }
   }), function (payload) {
     return props.children(payload);
@@ -717,6 +793,38 @@ var Supreme = __WEBPACK_IMPORTED_MODULE_0_styled_components__["c" /* default */]
 // This is client side config only - don't put anything in here that shouldn't be public!
 var endpoint = "http://localhost:4444";
 var perPage = 4;
+
+/***/ }),
+
+/***/ "./lib/calcTotalPrice.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = calcTotalPrice;
+function calcTotalPrice(cart) {
+  return cart.reduce(function (tally, cartItem) {
+    if (!cartItem.item) return tally;
+    return tally + cartItem.quantity * cartItem.item.price;
+  }, 0);
+}
+
+/***/ }),
+
+/***/ "./lib/formatMoney.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = (function (amount) {
+  var options = {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2
+  }; // if its a whole, dollar amount, leave off the .00
+
+  if (amount % 100 === 0) options.minimumFractionDigits = 0;
+  var formatter = new Intl.NumberFormat('en-US', options);
+  return formatter.format(amount / 100);
+});
 
 /***/ }),
 
