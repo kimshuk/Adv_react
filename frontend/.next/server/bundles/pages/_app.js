@@ -713,9 +713,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -739,9 +739,39 @@ function (_React$Component) {
   _inherits(RemoveFromCart, _React$Component);
 
   function RemoveFromCart() {
+    var _ref;
+
+    var _temp, _this;
+
     _classCallCheck(this, RemoveFromCart);
 
-    return _possibleConstructorReturn(this, (RemoveFromCart.__proto__ || Object.getPrototypeOf(RemoveFromCart)).apply(this, arguments));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_ref = RemoveFromCart.__proto__ || Object.getPrototypeOf(RemoveFromCart)).call.apply(_ref, [this].concat(args))), Object.defineProperty(_assertThisInitialized(_this), "update", {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function value(cache, payload) {
+        console.log("Running remove from cart update function"); // 1. Read the cache
+
+        var data = cache.readQuery({
+          query: __WEBPACK_IMPORTED_MODULE_5__User__["a" /* CURRENT_USER_QUERY */]
+        });
+        console.log(data); // 2. Remove that item from the cart
+
+        var cartItemId = payload.data.removeFromCart.id;
+        data.me.cart = data.me.cart.filter(function (cartItem) {
+          return cartItem.id !== cartItemId;
+        }); // 3. Write it back to the cache
+
+        cache.writeQuery({
+          query: __WEBPACK_IMPORTED_MODULE_5__User__["a" /* CURRENT_USER_QUERY */],
+          data: data
+        });
+      }
+    }), _temp));
   }
 
   _createClass(RemoveFromCart, [{
@@ -752,13 +782,21 @@ function (_React$Component) {
         variables: {
           id: this.props.id
         },
+        update: this.update,
+        optimisticResponse: {
+          __typename: "Mutation",
+          removeFromCart: {
+            __typename: "CartItem",
+            id: this.props.id
+          }
+        },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 45
         }
-      }, function (removeFromCart, _ref) {
-        var loading = _ref.loading,
-            error = _ref.error;
+      }, function (removeFromCart, _ref2) {
+        var loading = _ref2.loading,
+            error = _ref2.error;
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(BigButton, {
           disabled: loading,
           title: "Delete Item",
@@ -769,7 +807,7 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 58
           }
         }, "\xD7");
       });
