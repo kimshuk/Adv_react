@@ -206,6 +206,71 @@ var Cart = function Cart() {
 
 /***/ }),
 
+/***/ "./components/CartCount.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_transition_group__ = __webpack_require__("react-transition-group");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_transition_group___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_transition_group__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_styled_components__);
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/CartCount.js";
+
+
+
+
+var AnimationStyles = __WEBPACK_IMPORTED_MODULE_3_styled_components___default.a.span.withConfig({
+  displayName: "CartCount__AnimationStyles",
+  componentId: "xxvp4g-0"
+})(["position:relative;.count{display:block;position:relative;transition:all 0.4s;backface-visibility:hidden;}.count-enter{transform:scale(4) rotateX(0.5turn);}.count-enter-active{transform:rotateX(0);}.count-exit{top:0;position:absolute;transform:rotateX(0);}.count-exit-active{transform:scale(4) rotateX(0.5turn);}"]);
+var Dot = __WEBPACK_IMPORTED_MODULE_3_styled_components___default.a.div.withConfig({
+  displayName: "CartCount__Dot",
+  componentId: "xxvp4g-1"
+})(["background:", ";color:white;border-radius:50%;padding:0.5rem;line-height:2rem;min-width:3rem;margin-left:1rem;font-weight:100;font-feature-settings:\"tnum\";font-variant-numeric:tabular-nums;"], function (props) {
+  return props.theme.red;
+});
+
+var CartCount = function CartCount(_ref) {
+  var count = _ref.count;
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(AnimationStyles, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_transition_group__["TransitionGroup"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_transition_group__["CSSTransition"], {
+    unmountOnExit: true,
+    className: "count",
+    classNames: "count",
+    key: count,
+    timeout: {
+      enter: 400,
+      exit: 400
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Dot, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    }
+  }, count))));
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (CartCount);
+
+/***/ }),
+
 /***/ "./components/CartItem.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -466,7 +531,9 @@ var Meta = function Meta() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_NavStyles__ = __webpack_require__("./components/styles/NavStyles.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__User__ = __webpack_require__("./components/User.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Signout__ = __webpack_require__("./components/Signout.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__CartCount__ = __webpack_require__("./components/CartCount.js");
 var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Nav.js";
+
 
 
 
@@ -480,93 +547,101 @@ var Nav = function Nav() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__User__["b" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 11
     }
   }, function (_ref) {
     var me = _ref.data.me;
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__styles_NavStyles__["a" /* default */], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 13
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
       href: "/items",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13
+        lineNumber: 14
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14
+        lineNumber: 15
       }
     }, "Shop")), me && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_react__["Fragment"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 18
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
       href: "/sell",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 19
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 20
       }
     }, "Sell")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
       href: "/orders",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 22
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 23
       }
     }, "Orders")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
       href: "/me",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 25
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 26
       }
     }, "Account")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__Signout__["a" /* default */], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 28
       }
     }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_apollo__["Mutation"], {
       mutation: __WEBPACK_IMPORTED_MODULE_3__Cart__["b" /* TOGGLE_CART_MUTATION */],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 29
       }
     }, function (toggleCart) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
         onClick: toggleCart,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 31
         }
-      }, "My Cart");
+      }, "My Cart", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__CartCount__["a" /* default */], {
+        count: me.cart.reduce(function (tally, cartItem) {
+          return tally + cartItem.quantity;
+        }, 0),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33
+        }
+      }));
     })), !me && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
       href: "/signup",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 45
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 46
       }
     }, "Sign In")));
   });
@@ -1346,6 +1421,13 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-apollo");
+
+/***/ }),
+
+/***/ "react-transition-group":
+/***/ (function(module, exports) {
+
+module.exports = require("react-transition-group");
 
 /***/ }),
 
