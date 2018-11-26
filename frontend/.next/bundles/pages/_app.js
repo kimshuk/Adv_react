@@ -227,10 +227,28 @@ var CartItemStyles = __WEBPACK_IMPORTED_MODULE_1_styled_components__["c" /* defa
 
 var CartItem = function CartItem(_ref) {
   var cartItem = _ref.cartItem;
+  // first check if that item exists
+  if (!cartItem.item) return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(CartItemStyles, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    }
+  }, "This Item has been removed"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__RemoveFromCart__["a" /* default */], {
+    id: cartItem.id,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    }
+  }));
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(CartItemStyles, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 32
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
     width: "100",
@@ -238,34 +256,34 @@ var CartItem = function CartItem(_ref) {
     alt: cartItem.item.title,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 33
     }
   }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     className: "cart-item-details",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 34
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 35
     }
   }, cartItem.item.title), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 36
     }
   }, Object(__WEBPACK_IMPORTED_MODULE_3__lib_formatMoney__["a" /* default */])(cartItem.item.price * cartItem.quantity), " - ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("em", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 39
     }
   }, cartItem.quantity, " \xD7 ", Object(__WEBPACK_IMPORTED_MODULE_3__lib_formatMoney__["a" /* default */])(cartItem.item.price), " each"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__RemoveFromCart__["a" /* default */], {
     id: cartItem.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 44
     }
   }));
 };
