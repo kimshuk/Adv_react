@@ -401,7 +401,9 @@ CartItem.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_next_router__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Nav__ = __webpack_require__("./components/Nav.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Cart__ = __webpack_require__("./components/Cart.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Search__ = __webpack_require__("./components/Search.js");
 var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Header.js";
+
 
 
 
@@ -444,50 +446,50 @@ var Header = function Header() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(StyledHeader, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 61
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     className: "bar",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 62
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Logo, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 63
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 64
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 65
     }
   }, "Sick Fits"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Nav__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 68
     }
   })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     className: "sub-bar",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
-    }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 70
     }
-  }, "Search")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__Cart__["c" /* default */], {
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__Search__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 71
+    }
+  })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__Cart__["c" /* default */], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
     }
   }));
 };
@@ -941,6 +943,199 @@ Object.defineProperty(RemoveFromCart, "propTypes", {
 
 /***/ }),
 
+/***/ "./components/Search.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("@babel/runtime/regenerator");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_downshift__ = __webpack_require__("downshift");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_downshift___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_downshift__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_router__ = __webpack_require__("next/router");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_router__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_apollo__ = __webpack_require__("react-apollo");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react_apollo__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_graphql_tag__ = __webpack_require__("graphql-tag");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_graphql_tag__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_lodash_debounce__ = __webpack_require__("lodash.debounce");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_lodash_debounce___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_lodash_debounce__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__styles_DropDown__ = __webpack_require__("./components/styles/DropDown.js");
+
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Search.js";
+
+var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query SEARCH_ITEMS_QUERY($searchTerm: String!) {\n    items(\n      where: {\n        OR: [\n          { title_contains: $searchTerm }\n          { description_contains: $searchTerm }\n        ]\n      }\n    ) {\n      id\n      image\n      title\n    }\n  }\n"]);
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+
+
+
+var SEARCH_ITEMS_QUERY = __WEBPACK_IMPORTED_MODULE_5_graphql_tag___default()(_templateObject);
+
+var AutoComplete =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(AutoComplete, _React$Component);
+
+  function AutoComplete() {
+    var _ref;
+
+    var _temp, _this;
+
+    _classCallCheck(this, AutoComplete);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_ref = AutoComplete.__proto__ || Object.getPrototypeOf(AutoComplete)).call.apply(_ref, [this].concat(args))), Object.defineProperty(_assertThisInitialized(_this), "state", {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: {
+        items: [],
+        loading: false
+      }
+    }), Object.defineProperty(_assertThisInitialized(_this), "onChange", {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: __WEBPACK_IMPORTED_MODULE_6_lodash_debounce___default()(
+      /*#__PURE__*/
+      function () {
+        var _ref2 = _asyncToGenerator(
+        /*#__PURE__*/
+        __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee(e, client) {
+          var res;
+          return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  console.log("Searching.."); //    turn loadin on
+
+                  _this.setState({
+                    loading: true
+                  }); //    Manually query apollo client
+
+
+                  _context.next = 4;
+                  return client.query({
+                    query: SEARCH_ITEMS_QUERY,
+                    variables: {
+                      searchTerm: e.target.value
+                    }
+                  });
+
+                case 4:
+                  res = _context.sent;
+
+                  _this.setState({
+                    items: res.data.items,
+                    loading: false
+                  });
+
+                case 6:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee, this);
+        }));
+
+        return function (_x, _x2) {
+          return _ref2.apply(this, arguments);
+        };
+      }(), 350)
+    }), _temp));
+  }
+
+  _createClass(AutoComplete, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_DropDown__["c" /* SearchStyles */], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_apollo__["ApolloConsumer"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49
+        }
+      }, function (client) {
+        return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("input", {
+          type: "text",
+          onChange: function onChange(e) {
+            e.persist();
+
+            _this2.onChange(e, client);
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51
+          }
+        });
+      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_DropDown__["a" /* DropDown */], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60
+        }
+      }, this.state.items.map(function (item) {
+        return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_DropDown__["b" /* DropDownItem */], {
+          key: item.id,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 62
+          }
+        }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+          width: "50",
+          src: item.image,
+          alt: item.title,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 63
+          }
+        }), item.title);
+      }))));
+    }
+  }]);
+
+  return AutoComplete;
+}(__WEBPACK_IMPORTED_MODULE_1_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (AutoComplete);
+
+/***/ }),
+
 /***/ "./components/Signout.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1070,6 +1265,43 @@ var CloseButton = __WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.butt
   componentId: "s1seb878-0"
 })(["background:black;color:white;font-size:3rem;border:0;position:absolute;z-index:2;right:0;"]);
 /* harmony default export */ __webpack_exports__["a"] = (CloseButton);
+
+/***/ }),
+
+/***/ "./components/styles/DropDown.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DropDown; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return DropDownItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return SearchStyles; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_components__);
+
+var DropDown = __WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
+  displayName: "DropDown",
+  componentId: "n5d97g-0"
+})(["position:absolute;width:100%;z-index:2;border:1px solid ", ";"], function (props) {
+  return props.theme.lightgrey;
+});
+var DropDownItem = __WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
+  displayName: "DropDown__DropDownItem",
+  componentId: "n5d97g-1"
+})(["border-bottom:1px solid ", ";background:", ";padding:1rem;transition:all 0.2s;", ";display:flex;align-items:center;border-left:10px solid ", ";img{margin-right:10px;}"], function (props) {
+  return props.theme.lightgrey;
+}, function (props) {
+  return props.highlighted ? "#f7f7f7" : "white";
+}, function (props) {
+  return props.highlighted ? "padding-left: 2rem;" : null;
+}, function (props) {
+  return props.highlighted ? props.theme.lightgrey : "white";
+});
+var glow = Object(__WEBPACK_IMPORTED_MODULE_0_styled_components__["keyframes"])(["from{box-shadow:0 0 0px yellow;}to{box-shadow:0 0 10px 1px yellow;}"]);
+var SearchStyles = __WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
+  displayName: "DropDown__SearchStyles",
+  componentId: "n5d97g-2"
+})(["position:relative;input{width:100%;padding:10px;border:0;font-size:2rem;&.loading{animation:", " 0.5s ease-in-out infinite alternate;}}"], glow);
+
 
 /***/ }),
 
@@ -1391,10 +1623,24 @@ module.exports = require("apollo-boost");
 
 /***/ }),
 
+/***/ "downshift":
+/***/ (function(module, exports) {
+
+module.exports = require("downshift");
+
+/***/ }),
+
 /***/ "graphql-tag":
 /***/ (function(module, exports) {
 
 module.exports = require("graphql-tag");
+
+/***/ }),
+
+/***/ "lodash.debounce":
+/***/ (function(module, exports) {
+
+module.exports = require("lodash.debounce");
 
 /***/ }),
 
