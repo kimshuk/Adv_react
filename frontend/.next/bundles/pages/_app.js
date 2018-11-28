@@ -1,7 +1,7 @@
 module.exports =
 __NEXT_REGISTER_PAGE('/_app', function() {
           var comp =
-      webpackJsonp([1],{
+      webpackJsonp([0],{
 
 /***/ "./components/Cart.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -24,12 +24,14 @@ __NEXT_REGISTER_PAGE('/_app', function() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__CartItem__ = __webpack_require__("./components/CartItem.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__lib_calcTotalPrice__ = __webpack_require__("./lib/calcTotalPrice.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__lib_formatMoney__ = __webpack_require__("./lib/formatMoney.js");
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Cart.js";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__TakeMyMoney__ = __webpack_require__("./components/TakeMyMoney.js");
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Cart.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query {\n    cartOpen @client\n  }\n"]),
     _templateObject2 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  mutation {\n    toggleCart @client\n  }\n"]);
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 
 
 
@@ -51,7 +53,7 @@ var Composed = Object(__WEBPACK_IMPORTED_MODULE_3_react_adopt__["a" /* adopt */]
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__User__["b" /* default */], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 28
       }
     }, render);
   },
@@ -61,7 +63,7 @@ var Composed = Object(__WEBPACK_IMPORTED_MODULE_3_react_adopt__["a" /* adopt */]
       mutation: TOGGLE_CART_MUTATION,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 30
       }
     }, render);
   },
@@ -71,7 +73,7 @@ var Composed = Object(__WEBPACK_IMPORTED_MODULE_3_react_adopt__["a" /* adopt */]
       query: LOCAL_STATE_QUERY,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 32
       }
     }, render);
   }
@@ -81,7 +83,7 @@ var Cart = function Cart() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Composed, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 36
     }
   }, function (_ref4) {
     var user = _ref4.user,
@@ -93,34 +95,34 @@ var Cart = function Cart() {
       open: localState.data.cartOpen,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 42
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("header", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 43
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_CloseButton__["a" /* default */], {
       onClick: toggleCart,
       title: "close",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 44
       }
     }, "\xD7"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__styles_Supreme__["a" /* default */], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 47
       }
     }, me.name.split(" ")[0], "'s Cart"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 48
       }
     }, "You Have ", me.cart.length, " Item", me.cart.length === 1 ? "" : "s", " in your cart.")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("ul", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 53
       }
     }, me.cart.map(function (cartItem) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__CartItem__["a" /* default */], {
@@ -128,25 +130,30 @@ var Cart = function Cart() {
         cartItem: cartItem,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 55
         }
       });
     })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("footer", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 59
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
-      }
-    }, Object(__WEBPACK_IMPORTED_MODULE_11__lib_formatMoney__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_10__lib_calcTotalPrice__["a" /* default */])(me.cart))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__styles_SickButton__["a" /* default */], {
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 60
       }
-    }, "Checkout")));
+    }, Object(__WEBPACK_IMPORTED_MODULE_11__lib_formatMoney__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_10__lib_calcTotalPrice__["a" /* default */])(me.cart))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_12__TakeMyMoney__["a" /* default */], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      }
+    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__styles_SickButton__["a" /* default */], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      }
+    }, "Checkout"))));
   });
 };
 
@@ -166,7 +173,7 @@ var Cart = function Cart() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_transition_group__ = __webpack_require__("./node_modules/react-transition-group/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_transition_group___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_transition_group__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_styled_components__ = __webpack_require__("./node_modules/styled-components/dist/styled-components.browser.es.js");
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/CartCount.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/CartCount.js";
 
 
 
@@ -230,7 +237,7 @@ var CartCount = function CartCount(_ref) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_formatMoney__ = __webpack_require__("./lib/formatMoney.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__RemoveFromCart__ = __webpack_require__("./components/RemoveFromCart.js");
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/CartItem.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/CartItem.js";
 
 
 
@@ -313,6 +320,80 @@ CartItem.propTypes = {
 
 /***/ }),
 
+/***/ "./components/ErrorMessage.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("./node_modules/styled-components/dist/styled-components.browser.es.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("./node_modules/next/node_modules/prop-types/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/ErrorMessage.js";
+
+
+
+var ErrorStyles = __WEBPACK_IMPORTED_MODULE_0_styled_components__["c" /* default */].div.withConfig({
+  displayName: "ErrorMessage__ErrorStyles",
+  componentId: "s11u5fgj-0"
+})(["padding:2rem;background:white;margin:2rem 0;border:1px solid rgba(0,0,0,0.05);border-left:5px solid red;p{margin:0;font-weight:100;}strong{margin-right:1rem;}"]);
+
+var DisplayError = function DisplayError(_ref) {
+  var error = _ref.error;
+  if (!error || !error.message) return null;
+
+  if (error.networkError && error.networkError.result && error.networkError.result.errors.length) {
+    return error.networkError.result.errors.map(function (error, i) {
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(ErrorStyles, {
+        key: i,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
+        "data-test": "graphql-error",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("strong", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        }
+      }, "Shoot!"), error.message.replace('GraphQL error: ', '')));
+    });
+  }
+
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(ErrorStyles, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    }
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
+    "data-test": "graphql-error",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    }
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    }
+  }, "Shoot!"), error.message.replace('GraphQL error: ', '')));
+};
+
+DisplayError.defaultProps = {
+  error: {}
+};
+DisplayError.propTypes = {
+  error: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.object
+};
+/* harmony default export */ __webpack_exports__["a"] = (DisplayError);
+
+/***/ }),
+
 /***/ "./components/Header.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -329,7 +410,7 @@ CartItem.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Nav__ = __webpack_require__("./components/Nav.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Cart__ = __webpack_require__("./components/Cart.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Search__ = __webpack_require__("./components/Search.js");
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Header.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Header.js";
 
 
 
@@ -433,7 +514,7 @@ var Header = function Header() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("./node_modules/next/head.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_head__);
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Meta.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Meta.js";
 
 
 
@@ -498,7 +579,7 @@ var Meta = function Meta() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__User__ = __webpack_require__("./components/User.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Signout__ = __webpack_require__("./components/Signout.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__CartCount__ = __webpack_require__("./components/CartCount.js");
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Nav.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Nav.js";
 
 
 
@@ -626,7 +707,7 @@ var Nav = function Nav() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components__ = __webpack_require__("./node_modules/styled-components/dist/styled-components.browser.es.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Header__ = __webpack_require__("./components/Header.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Meta__ = __webpack_require__("./components/Meta.js");
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Page.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Page.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  @font-face {\n    font-family: 'radnika_next';\n    src: url('/static/radnikanext-medium-webfont.woff2') format('woff2');\n    font-weight: normal;\n    font-style: normal;\n  }\n  html {\n    box-sizing: border-box;\n    font-size: 10px;\n  }\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  body {\n    padding: 0;\n    margin: 0;\n    font-size: 1.5rem;\n    line-height: 2;\n    font-family: 'radnika_next';\n  }\n  a {\n    text-decoration: none;\n    color: ", ";\n  }\n"]);
 
@@ -738,7 +819,7 @@ function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_graphql_tag__ = __webpack_require__("./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_graphql_tag__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__User__ = __webpack_require__("./components/User.js");
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/RemoveFromCart.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/RemoveFromCart.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  mutation removeFromCart($id: ID!) {\n    removeFromCart(id: $id) {\n      id\n    }\n  }\n"]);
 
@@ -887,7 +968,7 @@ Object.defineProperty(RemoveFromCart, "propTypes", {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_lodash_debounce___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_lodash_debounce__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__styles_DropDown__ = __webpack_require__("./components/styles/DropDown.js");
 
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Search.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Search.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query SEARCH_ITEMS_QUERY($searchTerm: String!) {\n    items(\n      where: {\n        OR: [\n          { title_contains: $searchTerm }\n          { description_contains: $searchTerm }\n        ]\n      }\n    ) {\n      id\n      image\n      title\n    }\n  }\n"]);
 
@@ -1113,7 +1194,7 @@ function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag__ = __webpack_require__("./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_graphql_tag__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__User__ = __webpack_require__("./components/User.js");
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Signout.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Signout.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  mutation SIGN_OUT_MUTATION {\n    signout {\n      message\n    }\n  }\n"]);
 
@@ -1150,6 +1231,94 @@ var Signout = function Signout(props) {
 
 /***/ }),
 
+/***/ "./components/TakeMyMoney.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_stripe_checkout__ = __webpack_require__("./node_modules/react-stripe-checkout/dist/main.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_stripe_checkout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_stripe_checkout__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_apollo__ = __webpack_require__("./node_modules/react-apollo/react-apollo.browser.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_apollo__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_router__ = __webpack_require__("./node_modules/next/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_router__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_nprogress__ = __webpack_require__("./node_modules/nprogress/nprogress.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_nprogress___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_nprogress__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_prop_types__ = __webpack_require__("./node_modules/next/node_modules/prop-types/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_graphql_tag__ = __webpack_require__("./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_graphql_tag__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__lib_calcTotalPrice__ = __webpack_require__("./lib/calcTotalPrice.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ErrorMessage__ = __webpack_require__("./components/ErrorMessage.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__User__ = __webpack_require__("./components/User.js");
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/TakeMyMoney.js";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+
+
+
+var TakeMyMoney =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(TakeMyMoney, _React$Component);
+
+  function TakeMyMoney() {
+    _classCallCheck(this, TakeMyMoney);
+
+    return _possibleConstructorReturn(this, (TakeMyMoney.__proto__ || Object.getPrototypeOf(TakeMyMoney)).apply(this, arguments));
+  }
+
+  _createClass(TakeMyMoney, [{
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__User__["b" /* default */], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
+        }
+      }, function (_ref) {
+        var me = _ref.data.me;
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_stripe_checkout___default.a, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17
+          }
+        }, _this.props.children);
+      });
+    }
+  }]);
+
+  return TakeMyMoney;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (TakeMyMoney);
+
+/***/ }),
+
 /***/ "./components/User.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1163,7 +1332,7 @@ var Signout = function Signout(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_graphql_tag__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__("./node_modules/next/node_modules/prop-types/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/User.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/User.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query {\n    me {\n      id\n      email\n      name\n      permissions\n      cart {\n        id\n        quantity\n        item {\n          id\n          title\n          image\n          price\n          description\n        }\n      }\n    }\n  }\n"]);
 
@@ -25475,6 +25644,550 @@ if (false) {
 
 /***/ }),
 
+/***/ "./node_modules/react-stripe-checkout/dist/main.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__("./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__("./node_modules/next/node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var scriptLoading = false;
+var scriptLoaded = false;
+var scriptDidError = false;
+
+var ReactStripeCheckout = function (_React$Component) {
+  _inherits(ReactStripeCheckout, _React$Component);
+
+  function ReactStripeCheckout(props) {
+    _classCallCheck(this, ReactStripeCheckout);
+
+    var _this = _possibleConstructorReturn(this, (ReactStripeCheckout.__proto__ || Object.getPrototypeOf(ReactStripeCheckout)).call(this, props));
+
+    _this.onScriptLoaded = function () {
+      if (!ReactStripeCheckout.stripeHandler) {
+        ReactStripeCheckout.stripeHandler = StripeCheckout.configure({
+          key: _this.props.stripeKey
+        });
+        if (_this.hasPendingClick) {
+          _this.showStripeDialog();
+        }
+      }
+    };
+
+    _this.onScriptError = function () {
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this.hideLoadingDialog();
+      if (_this.props.onScriptError) {
+        _this.props.onScriptError.apply(_this, args);
+      }
+    };
+
+    _this.onClosed = function () {
+      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+
+      if (_this._isMounted) _this.setState({ open: false });
+      if (_this.props.closed) {
+        _this.props.closed.apply(_this, args);
+      }
+    };
+
+    _this.onOpened = function () {
+      for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+        args[_key3] = arguments[_key3];
+      }
+
+      _this.setState({ open: true });
+      if (_this.props.opened) {
+        _this.props.opened.apply(_this, args);
+      }
+    };
+
+    _this.getConfig = function () {
+      return ['token', 'image', 'name', 'description', 'amount', 'locale', 'currency', 'panelLabel', 'zipCode', 'shippingAddress', 'billingAddress', 'email', 'allowRememberMe', 'bitcoin', 'alipay', 'alipayReusable'].reduce(function (config, key) {
+        return _extends({}, config, _this.props.hasOwnProperty(key) && _defineProperty({}, key, _this.props[key]));
+      }, {
+        opened: _this.onOpened,
+        closed: _this.onClosed
+      });
+    };
+
+    _this.onClick = function () {
+      // eslint-disable-line react/sort-comp
+      if (_this.props.disabled) {
+        return;
+      }
+
+      if (scriptDidError) {
+        try {
+          throw new Error('Tried to call onClick, but StripeCheckout failed to load');
+        } catch (x) {} // eslint-disable-line no-empty
+      } else if (ReactStripeCheckout.stripeHandler) {
+        _this.showStripeDialog();
+      } else {
+        _this.showLoadingDialog();
+        _this.hasPendingClick = true;
+      }
+    };
+
+    _this.handleOnMouseDown = function () {
+      _this.setState({
+        buttonActive: true
+      });
+    };
+
+    _this.handleOnMouseUp = function () {
+      _this.setState({
+        buttonActive: false
+      });
+    };
+
+    _this.state = {
+      open: false,
+      buttonActive: false
+    };
+    return _this;
+  }
+
+  _createClass(ReactStripeCheckout, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      this._isMounted = true;
+      if (scriptLoaded) {
+        return;
+      }
+
+      if (scriptLoading) {
+        return;
+      }
+
+      scriptLoading = true;
+
+      var script = document.createElement('script');
+      if (typeof this.props.onScriptTagCreated === 'function') {
+        this.props.onScriptTagCreated(script);
+      }
+
+      script.src = 'https://checkout.stripe.com/checkout.js';
+      script.async = 1;
+
+      this.loadPromise = function () {
+        var canceled = false;
+        var promise = new Promise(function (resolve, reject) {
+          script.onload = function () {
+            scriptLoaded = true;
+            scriptLoading = false;
+            resolve();
+            _this2.onScriptLoaded();
+          };
+          script.onerror = function (event) {
+            scriptDidError = true;
+            scriptLoading = false;
+            reject(event);
+            _this2.onScriptError(event);
+          };
+        });
+        var wrappedPromise = new Promise(function (accept, cancel) {
+          promise.then(function () {
+            return canceled ? cancel({ isCanceled: true }) : accept();
+          }); // eslint-disable-line no-confusing-arrow
+          promise.catch(function (error) {
+            return canceled ? cancel({ isCanceled: true }) : cancel(error);
+          }); // eslint-disable-line no-confusing-arrow
+        });
+
+        return {
+          promise: wrappedPromise,
+          cancel: function cancel() {
+            canceled = true;
+          }
+        };
+      }();
+
+      this.loadPromise.promise.then(this.onScriptLoaded).catch(this.onScriptError);
+
+      document.body.appendChild(script);
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (!scriptLoading) {
+        this.updateStripeHandler();
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this._isMounted = false;
+      if (this.loadPromise) {
+        this.loadPromise.cancel();
+      }
+      if (ReactStripeCheckout.stripeHandler && this.state.open) {
+        ReactStripeCheckout.stripeHandler.close();
+      }
+    }
+  }, {
+    key: 'updateStripeHandler',
+    value: function updateStripeHandler() {
+      if (!ReactStripeCheckout.stripeHandler || this.props.reconfigureOnUpdate) {
+        ReactStripeCheckout.stripeHandler = StripeCheckout.configure({
+          key: this.props.stripeKey
+        });
+      }
+    }
+  }, {
+    key: 'showLoadingDialog',
+    value: function showLoadingDialog() {
+      if (this.props.showLoadingDialog) {
+        for (var _len4 = arguments.length, args = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+          args[_key4] = arguments[_key4];
+        }
+
+        this.props.showLoadingDialog.apply(this, args);
+      }
+    }
+  }, {
+    key: 'hideLoadingDialog',
+    value: function hideLoadingDialog() {
+      if (this.props.hideLoadingDialog) {
+        for (var _len5 = arguments.length, args = Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+          args[_key5] = arguments[_key5];
+        }
+
+        this.props.hideLoadingDialog.apply(this, args);
+      }
+    }
+  }, {
+    key: 'showStripeDialog',
+    value: function showStripeDialog() {
+      this.hideLoadingDialog();
+      ReactStripeCheckout.stripeHandler.open(this.getConfig());
+    }
+  }, {
+    key: 'renderDefaultStripeButton',
+    value: function renderDefaultStripeButton() {
+      return _react2.default.createElement(
+        'button',
+        _extends({}, _defineProperty({}, this.props.triggerEvent, this.onClick), {
+          className: this.props.className,
+          onMouseDown: this.handleOnMouseDown,
+          onFocus: this.handleOnMouseDown,
+          onMouseUp: this.handleOnMouseUp,
+          onMouseOut: this.handleOnMouseUp,
+          onBlur: this.handleOnMouseUp,
+          style: _extends({}, {
+            overflow: 'hidden',
+            display: 'inline-block',
+            background: 'linear-gradient(#28a0e5,#015e94)',
+            border: 0,
+            padding: 1,
+            textDecoration: 'none',
+            borderRadius: 5,
+            boxShadow: '0 1px 0 rgba(0,0,0,0.2)',
+            cursor: 'pointer',
+            visibility: 'visible',
+            userSelect: 'none'
+          }, this.state.buttonActive && {
+            background: '#005d93'
+          }, this.props.style)
+        }),
+        _react2.default.createElement(
+          'span',
+          {
+            style: _extends({}, {
+              backgroundImage: 'linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4)',
+              fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
+              fontSize: 14,
+              position: 'relative',
+              padding: '0 12px',
+              display: 'block',
+              height: 30,
+              lineHeight: '30px',
+              color: '#fff',
+              fontWeight: 'bold',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25)',
+              textShadow: '0 -1px 0 rgba(0,0,0,0.25)',
+              borderRadius: 4
+            }, this.state.buttonActive && {
+              color: '#eee',
+              boxShadow: 'inset 0 1px 0 rgba(0,0,0,0.1)',
+              backgroundImage: 'linear-gradient(#008cdd,#008cdd 85%,#239adf)'
+            }, this.props.textStyle)
+          },
+          this.props.label
+        )
+      );
+    }
+  }, {
+    key: 'renderDisabledButton',
+    value: function renderDisabledButton() {
+      return _react2.default.createElement(
+        'button',
+        {
+          disabled: true,
+          style: {
+            background: 'rgba(0,0,0,0.2)',
+            overflow: 'hidden',
+            display: 'inline-block',
+            border: 0,
+            padding: 1,
+            textDecoration: 'none',
+            borderRadius: 5,
+            userSelect: 'none'
+          }
+        },
+        _react2.default.createElement(
+          'span',
+          {
+            style: {
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25)',
+              fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
+              fontSize: 14,
+              position: 'relative',
+              padding: '0 12px',
+              display: 'block',
+              height: 30,
+              lineHeight: '30px',
+              borderRadius: 4,
+              color: '#999',
+              background: '#f8f9fa',
+              textShadow: '0 1px 0 rgba(255,255,255,0.5)'
+            }
+          },
+          this.props.label
+        )
+      );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      if (this.props.desktopShowModal === true && !this.state.open) {
+        this.onClick();
+      } else if (this.props.desktopShowModal === false && this.state.open) {
+        ReactStripeCheckout.stripeHandler.close();
+      }
+
+      var ComponentClass = this.props.ComponentClass;
+
+      if (this.props.children) {
+        return _react2.default.createElement(ComponentClass, _extends({}, _defineProperty({}, this.props.triggerEvent, this.onClick), {
+          children: this.props.children
+        }));
+      }
+      return this.props.disabled ? this.renderDisabledButton() : this.renderDefaultStripeButton();
+    }
+  }]);
+
+  return ReactStripeCheckout;
+}(_react2.default.Component);
+
+ReactStripeCheckout.defaultProps = {
+  className: 'StripeCheckout',
+  label: 'Pay With Card',
+  locale: 'auto',
+  ComponentClass: 'span',
+  reconfigureOnUpdate: false,
+  triggerEvent: 'onClick'
+};
+ReactStripeCheckout.propTypes = {
+  // Opens / closes the checkout modal by value
+  // WARNING: does not work on mobile due to browser security restrictions
+  // NOTE: Must be set to false when receiving token to prevent modal from
+  //       opening automatically after closing
+  desktopShowModal: _propTypes2.default.bool,
+
+  triggerEvent: _propTypes2.default.oneOf(['onClick', 'onTouchTap', 'onTouchStart']),
+
+  // If included, will render the default blue button with label text.
+  // (Requires including stripe-checkout.css or adding the .styl file
+  // to your pipeline)
+  label: _propTypes2.default.string,
+
+  // Custom styling for default button
+  style: _propTypes2.default.object,
+  // Custom styling for <span> tag inside default button
+  textStyle: _propTypes2.default.object,
+
+  // Prevents any events from opening the popup
+  // Adds the disabled prop to the button and adjusts the styling as well
+  disabled: _propTypes2.default.bool,
+
+  // Named component to wrap button (eg. div)
+  ComponentClass: _propTypes2.default.string,
+
+  // Show a loading indicator
+  showLoadingDialog: _propTypes2.default.func,
+  // Hide the loading indicator
+  hideLoadingDialog: _propTypes2.default.func,
+
+  // Run this method when the scrupt fails to load. Will run if the internet
+  // connection is offline when attemting to load the script.
+  onScriptError: _propTypes2.default.func,
+
+  // Runs when the script tag is created, but before it is added to the DOM
+  onScriptTagCreated: _propTypes2.default.func,
+
+  // By default, any time the React component is updated, it will call
+  // StripeCheckout.configure, which may result in additional XHR calls to the
+  // stripe API.  If you know the first configuration is all you need, you
+  // can set this to false.  Subsequent updates will affect the StripeCheckout.open
+  // (e.g. different prices)
+  reconfigureOnUpdate: _propTypes2.default.bool,
+
+  // =====================================================
+  // Required by stripe
+  // see Stripe docs for more info:
+  //   https://stripe.com/docs/checkout#integration-custom
+  // =====================================================
+
+  // Your publishable key (test or live).
+  // can't use "key" as a prop in react, so have to change the keyname
+  stripeKey: _propTypes2.default.string.isRequired,
+
+  // The callback to invoke when the Checkout process is complete.
+  //   function(token)
+  //     token is the token object created.
+  //     token.id can be used to create a charge or customer.
+  //     token.email contains the email address entered by the user.
+  token: _propTypes2.default.func.isRequired,
+
+  // ==========================
+  // Highly Recommended Options
+  // ==========================
+
+  // Name of the company or website.
+  name: _propTypes2.default.string,
+
+  // A description of the product or service being purchased.
+  description: _propTypes2.default.string,
+
+  // A relative URL pointing to a square image of your brand or product. The
+  // recommended minimum size is 128x128px. The recommended image types are
+  // .gif, .jpeg, and .png.
+  image: _propTypes2.default.string,
+
+  // The amount (in cents) that's shown to the user. Note that you will still
+  // have to explicitly include it when you create a charge using the API.
+  amount: _propTypes2.default.number,
+
+  // Specify auto to display Checkout in the user's preferred language, if
+  // available. English will be used by default.
+  //
+  // https://stripe.com/docs/checkout#supported-languages
+  // for more info.
+  locale: _propTypes2.default.oneOf(['auto', // (Default) Automatically chosen by checkout
+  'zh', // Simplified Chinese
+  'da', // Danish
+  'nl', // Dutch
+  'en', // English
+  'fr', // French
+  'de', // German
+  'it', // Italian
+  'ja', // Japanease
+  'no', // Norwegian
+  'es', // Spanish
+  'sv']),
+
+  // ==============
+  // Optional Props
+  // ==============
+
+  // The currency of the amount (3-letter ISO code). The default is USD.
+  currency: _propTypes2.default.oneOf(['AED', 'AFN', 'ALL', 'AMD', 'ANG', 'AOA', 'ARS', 'AUD', 'AWG', 'AZN', 'BAM', 'BBD', // eslint-disable-line comma-spacing
+  'BDT', 'BGN', 'BIF', 'BMD', 'BND', 'BOB', 'BRL', 'BSD', 'BWP', 'BZD', 'CAD', 'CDF', // eslint-disable-line comma-spacing
+  'CHF', 'CLP', 'CNY', 'COP', 'CRC', 'CVE', 'CZK', 'DJF', 'DKK', 'DOP', 'DZD', 'EEK', // eslint-disable-line comma-spacing
+  'EGP', 'ETB', 'EUR', 'FJD', 'FKP', 'GBP', 'GEL', 'GIP', 'GMD', 'GNF', 'GTQ', 'GYD', // eslint-disable-line comma-spacing
+  'HKD', 'HNL', 'HRK', 'HTG', 'HUF', 'IDR', 'ILS', 'INR', 'ISK', 'JMD', 'JPY', 'KES', // eslint-disable-line comma-spacing
+  'KGS', 'KHR', 'KMF', 'KRW', 'KYD', 'KZT', 'LAK', 'LBP', 'LKR', 'LRD', 'LSL', 'LTL', // eslint-disable-line comma-spacing
+  'LVL', 'MAD', 'MDL', 'MGA', 'MKD', 'MNT', 'MOP', 'MRO', 'MUR', 'MVR', 'MWK', 'MXN', // eslint-disable-line comma-spacing
+  'MYR', 'MZN', 'NAD', 'NGN', 'NIO', 'NOK', 'NPR', 'NZD', 'PAB', 'PEN', 'PGK', 'PHP', // eslint-disable-line comma-spacing
+  'PKR', 'PLN', 'PYG', 'QAR', 'RON', 'RSD', 'RUB', 'RWF', 'SAR', 'SBD', 'SCR', 'SEK', // eslint-disable-line comma-spacing
+  'SGD', 'SHP', 'SLL', 'SOS', 'SRD', 'STD', 'SVC', 'SZL', 'THB', 'TJS', 'TOP', 'TRY', // eslint-disable-line comma-spacing
+  'TTD', 'TWD', 'TZS', 'UAH', 'UGX', 'USD', 'UYU', 'UZS', 'VND', 'VUV', 'WST', 'XAF', // eslint-disable-line comma-spacing
+  'XCD', 'XOF', 'XPF', 'YER', 'ZAR', 'ZMW']),
+
+  // The label of the payment button in the Checkout form (e.g. “Subscribe”,
+  // “Pay {{amount}}”, etc.). If you include {{amount}}, it will be replaced
+  // by the provided amount. Otherwise, the amount will be appended to the
+  // end of your label.
+  panelLabel: _propTypes2.default.string,
+
+  // Specify whether Checkout should validate the billing ZIP code (true or
+  // false)
+  zipCode: _propTypes2.default.bool,
+
+  // Specify whether Checkout should collect the user's billing address
+  // (true or false). The default is false.
+  billingAddress: _propTypes2.default.bool,
+
+  // Specify whether Checkout should collect the user's shipping address
+  // (true or false). The default is false.
+  shippingAddress: _propTypes2.default.bool,
+
+  // Specify whether Checkout should validate the billing ZIP code (true or
+  // false). The default is false.
+  email: _propTypes2.default.string,
+
+  // Specify whether to include the option to "Remember Me" for future
+  // purchases (true or false). The default is true.
+  allowRememberMe: _propTypes2.default.bool,
+
+  // Specify whether to accept Bitcoin in Checkout. The default is false.
+  bitcoin: _propTypes2.default.bool,
+
+  // Specify whether to accept Alipay ('auto', true, or false). The default
+  // is false.
+  alipay: _propTypes2.default.oneOf(['auto', true, false]),
+
+  // Specify if you need reusable access to the customer's Alipay account
+  // (true or false). The default is false.
+  alipayReusable: _propTypes2.default.bool,
+
+  // function() The callback to invoke when Checkout is opened (not supported
+  // in IE6 and IE7).
+  opened: _propTypes2.default.func,
+
+  // function() The callback to invoke when Checkout is closed (not supported
+  // in IE6 and IE7).
+  closed: _propTypes2.default.func
+};
+ReactStripeCheckout._isMounted = false;
+exports.default = ReactStripeCheckout;
+
+
+/***/ }),
+
 /***/ "./node_modules/react-transition-group/CSSTransition.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31715,7 +32428,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react_apollo__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__lib_withData__ = __webpack_require__("./lib/withData.js");
 
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/pages/_app.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/pages/_app.js";
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }

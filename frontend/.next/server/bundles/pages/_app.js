@@ -94,12 +94,14 @@ module.exports =
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__CartItem__ = __webpack_require__("./components/CartItem.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__lib_calcTotalPrice__ = __webpack_require__("./lib/calcTotalPrice.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__lib_formatMoney__ = __webpack_require__("./lib/formatMoney.js");
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Cart.js";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__TakeMyMoney__ = __webpack_require__("./components/TakeMyMoney.js");
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Cart.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query {\n    cartOpen @client\n  }\n"]),
     _templateObject2 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  mutation {\n    toggleCart @client\n  }\n"]);
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 
 
 
@@ -121,7 +123,7 @@ var Composed = Object(__WEBPACK_IMPORTED_MODULE_3_react_adopt__["adopt"])({
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__User__["b" /* default */], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 28
       }
     }, render);
   },
@@ -131,7 +133,7 @@ var Composed = Object(__WEBPACK_IMPORTED_MODULE_3_react_adopt__["adopt"])({
       mutation: TOGGLE_CART_MUTATION,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 30
       }
     }, render);
   },
@@ -141,7 +143,7 @@ var Composed = Object(__WEBPACK_IMPORTED_MODULE_3_react_adopt__["adopt"])({
       query: LOCAL_STATE_QUERY,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 32
       }
     }, render);
   }
@@ -151,7 +153,7 @@ var Cart = function Cart() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Composed, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 36
     }
   }, function (_ref4) {
     var user = _ref4.user,
@@ -163,34 +165,34 @@ var Cart = function Cart() {
       open: localState.data.cartOpen,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 42
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("header", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 43
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_CloseButton__["a" /* default */], {
       onClick: toggleCart,
       title: "close",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 44
       }
     }, "\xD7"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__styles_Supreme__["a" /* default */], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 47
       }
     }, me.name.split(" ")[0], "'s Cart"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 48
       }
     }, "You Have ", me.cart.length, " Item", me.cart.length === 1 ? "" : "s", " in your cart.")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("ul", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 53
       }
     }, me.cart.map(function (cartItem) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__CartItem__["a" /* default */], {
@@ -198,25 +200,30 @@ var Cart = function Cart() {
         cartItem: cartItem,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 55
         }
       });
     })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("footer", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 59
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
-      }
-    }, Object(__WEBPACK_IMPORTED_MODULE_11__lib_formatMoney__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_10__lib_calcTotalPrice__["a" /* default */])(me.cart))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__styles_SickButton__["a" /* default */], {
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 60
       }
-    }, "Checkout")));
+    }, Object(__WEBPACK_IMPORTED_MODULE_11__lib_formatMoney__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_10__lib_calcTotalPrice__["a" /* default */])(me.cart))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_12__TakeMyMoney__["a" /* default */], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      }
+    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__styles_SickButton__["a" /* default */], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      }
+    }, "Checkout"))));
   });
 };
 
@@ -237,7 +244,7 @@ var Cart = function Cart() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_transition_group___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_transition_group__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_styled_components__ = __webpack_require__("styled-components");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_styled_components__);
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/CartCount.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/CartCount.js";
 
 
 
@@ -302,7 +309,7 @@ var CartCount = function CartCount(_ref) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_formatMoney__ = __webpack_require__("./lib/formatMoney.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__RemoveFromCart__ = __webpack_require__("./components/RemoveFromCart.js");
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/CartItem.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/CartItem.js";
 
 
 
@@ -385,6 +392,81 @@ CartItem.propTypes = {
 
 /***/ }),
 
+/***/ "./components/ErrorMessage.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_components__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/ErrorMessage.js";
+
+
+
+var ErrorStyles = __WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
+  displayName: "ErrorMessage__ErrorStyles",
+  componentId: "s11u5fgj-0"
+})(["padding:2rem;background:white;margin:2rem 0;border:1px solid rgba(0,0,0,0.05);border-left:5px solid red;p{margin:0;font-weight:100;}strong{margin-right:1rem;}"]);
+
+var DisplayError = function DisplayError(_ref) {
+  var error = _ref.error;
+  if (!error || !error.message) return null;
+
+  if (error.networkError && error.networkError.result && error.networkError.result.errors.length) {
+    return error.networkError.result.errors.map(function (error, i) {
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(ErrorStyles, {
+        key: i,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
+        "data-test": "graphql-error",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("strong", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        }
+      }, "Shoot!"), error.message.replace('GraphQL error: ', '')));
+    });
+  }
+
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(ErrorStyles, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    }
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
+    "data-test": "graphql-error",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    }
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    }
+  }, "Shoot!"), error.message.replace('GraphQL error: ', '')));
+};
+
+DisplayError.defaultProps = {
+  error: {}
+};
+DisplayError.propTypes = {
+  error: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.object
+};
+/* harmony default export */ __webpack_exports__["a"] = (DisplayError);
+
+/***/ }),
+
 /***/ "./components/Header.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -402,7 +484,7 @@ CartItem.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Nav__ = __webpack_require__("./components/Nav.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Cart__ = __webpack_require__("./components/Cart.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Search__ = __webpack_require__("./components/Search.js");
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Header.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Header.js";
 
 
 
@@ -506,7 +588,7 @@ var Header = function Header() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("next/head");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_head__);
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Meta.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Meta.js";
 
 
 
@@ -571,7 +653,7 @@ var Meta = function Meta() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__User__ = __webpack_require__("./components/User.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Signout__ = __webpack_require__("./components/Signout.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__CartCount__ = __webpack_require__("./components/CartCount.js");
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Nav.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Nav.js";
 
 
 
@@ -700,7 +782,7 @@ var Nav = function Nav() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_styled_components__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Header__ = __webpack_require__("./components/Header.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Meta__ = __webpack_require__("./components/Meta.js");
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Page.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Page.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  @font-face {\n    font-family: 'radnika_next';\n    src: url('/static/radnikanext-medium-webfont.woff2') format('woff2');\n    font-weight: normal;\n    font-style: normal;\n  }\n  html {\n    box-sizing: border-box;\n    font-size: 10px;\n  }\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  body {\n    padding: 0;\n    margin: 0;\n    font-size: 1.5rem;\n    line-height: 2;\n    font-family: 'radnika_next';\n  }\n  a {\n    text-decoration: none;\n    color: ", ";\n  }\n"]);
 
@@ -813,7 +895,7 @@ function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_graphql_tag__ = __webpack_require__("graphql-tag");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_graphql_tag__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__User__ = __webpack_require__("./components/User.js");
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/RemoveFromCart.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/RemoveFromCart.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  mutation removeFromCart($id: ID!) {\n    removeFromCart(id: $id) {\n      id\n    }\n  }\n"]);
 
@@ -963,7 +1045,7 @@ Object.defineProperty(RemoveFromCart, "propTypes", {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_lodash_debounce___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_lodash_debounce__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__styles_DropDown__ = __webpack_require__("./components/styles/DropDown.js");
 
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Search.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Search.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query SEARCH_ITEMS_QUERY($searchTerm: String!) {\n    items(\n      where: {\n        OR: [\n          { title_contains: $searchTerm }\n          { description_contains: $searchTerm }\n        ]\n      }\n    ) {\n      id\n      image\n      title\n    }\n  }\n"]);
 
@@ -1189,7 +1271,7 @@ function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag__ = __webpack_require__("graphql-tag");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_graphql_tag__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__User__ = __webpack_require__("./components/User.js");
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Signout.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Signout.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  mutation SIGN_OUT_MUTATION {\n    signout {\n      message\n    }\n  }\n"]);
 
@@ -1226,6 +1308,94 @@ var Signout = function Signout(props) {
 
 /***/ }),
 
+/***/ "./components/TakeMyMoney.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_stripe_checkout__ = __webpack_require__("react-stripe-checkout");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_stripe_checkout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_stripe_checkout__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_apollo__ = __webpack_require__("react-apollo");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_apollo__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_router__ = __webpack_require__("next/router");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_router__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_nprogress__ = __webpack_require__("nprogress");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_nprogress___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_nprogress__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_graphql_tag__ = __webpack_require__("graphql-tag");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_graphql_tag__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__lib_calcTotalPrice__ = __webpack_require__("./lib/calcTotalPrice.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ErrorMessage__ = __webpack_require__("./components/ErrorMessage.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__User__ = __webpack_require__("./components/User.js");
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/TakeMyMoney.js";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+
+
+
+var TakeMyMoney =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(TakeMyMoney, _React$Component);
+
+  function TakeMyMoney() {
+    _classCallCheck(this, TakeMyMoney);
+
+    return _possibleConstructorReturn(this, (TakeMyMoney.__proto__ || Object.getPrototypeOf(TakeMyMoney)).apply(this, arguments));
+  }
+
+  _createClass(TakeMyMoney, [{
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__User__["b" /* default */], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
+        }
+      }, function (_ref) {
+        var me = _ref.data.me;
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_stripe_checkout___default.a, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17
+          }
+        }, _this.props.children);
+      });
+    }
+  }]);
+
+  return TakeMyMoney;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (TakeMyMoney);
+
+/***/ }),
+
 /***/ "./components/User.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1239,7 +1409,7 @@ var Signout = function Signout(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_graphql_tag__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__("prop-types");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/User.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/User.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query {\n    me {\n      id\n      email\n      name\n      permissions\n      cart {\n        id\n        quantity\n        item {\n          id\n          title\n          image\n          price\n          description\n        }\n      }\n    }\n  }\n"]);
 
@@ -1523,7 +1693,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react_apollo__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__lib_withData__ = __webpack_require__("./lib/withData.js");
 
-var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/pages/_app.js";
+var _jsxFileName = "/Users/developer/code/Adv_react/frontend/pages/_app.js";
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -1753,6 +1923,13 @@ module.exports = require("react-adopt");
 /***/ (function(module, exports) {
 
 module.exports = require("react-apollo");
+
+/***/ }),
+
+/***/ "react-stripe-checkout":
+/***/ (function(module, exports) {
+
+module.exports = require("react-stripe-checkout");
 
 /***/ }),
 
