@@ -1341,10 +1341,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
@@ -1355,6 +1354,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
+
+function totalItems(cart) {
+  return cart.reduce(function (tally, cartItem) {
+    return tally + cartItem.quantity;
+  }, 0);
+}
 
 var TakeMyMoney =
 /*#__PURE__*/
@@ -1362,29 +1368,55 @@ function (_React$Component) {
   _inherits(TakeMyMoney, _React$Component);
 
   function TakeMyMoney() {
+    var _ref;
+
+    var _temp, _this;
+
     _classCallCheck(this, TakeMyMoney);
 
-    return _possibleConstructorReturn(this, (TakeMyMoney.__proto__ || Object.getPrototypeOf(TakeMyMoney)).apply(this, arguments));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_ref = TakeMyMoney.__proto__ || Object.getPrototypeOf(TakeMyMoney)).call.apply(_ref, [this].concat(args))), Object.defineProperty(_assertThisInitialized(_this), "onToken", {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function value(res) {
+        console.log("On Token Called!");
+        console.log(res.id);
+      }
+    }), _temp));
   }
 
   _createClass(TakeMyMoney, [{
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__User__["b" /* default */], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 23
         }
-      }, function (_ref) {
-        var me = _ref.data.me;
+      }, function (_ref2) {
+        var me = _ref2.data.me;
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_stripe_checkout___default.a, {
+          amount: Object(__WEBPACK_IMPORTED_MODULE_7__lib_calcTotalPrice__["a" /* default */])(me.cart),
+          name: "Sick Fits",
+          description: "Order of ".concat(totalItems(me.cart), " items"),
+          image: me.cart[0].item && me.cart[0].item.image,
+          stripeKey: "pk_test_Db7Hfc4JVWCjJNbg3PHQ3Pkn",
+          currency: "USD",
+          email: me.email,
+          token: function token(res) {
+            return _this2.onToken(res);
+          },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 17
+            lineNumber: 25
           }
-        }, _this.props.children);
+        }, _this2.props.children);
       });
     }
   }]);
