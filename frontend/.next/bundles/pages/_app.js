@@ -1254,6 +1254,8 @@ var Signout = function Signout(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__User__ = __webpack_require__("./components/User.js");
 var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/TakeMyMoney.js";
 
+var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  mutation createOrder($token: String!) {\n    createOrder(token: $token) {\n      id\n      charge\n      total\n      items {\n        id\n        title\n      }\n    }\n  }\n"]);
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1268,6 +1270,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
 
@@ -1278,6 +1281,8 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
 
+
+var CREATE_ORDER_MUTATION = __WEBPACK_IMPORTED_MODULE_6_graphql_tag___default()(_templateObject);
 
 function totalItems(cart) {
   return cart.reduce(function (tally, cartItem) {
@@ -1305,9 +1310,17 @@ function (_React$Component) {
       configurable: true,
       enumerable: true,
       writable: true,
-      value: function value(res) {
+      value: function value(res, createOrder) {
         console.log("On Token Called!");
-        console.log(res.id);
+        console.log(res.id); // manually call the mutation once we have the stripe token
+
+        createOrder({
+          variables: {
+            token: res.id
+          }
+        }).catch(function (err) {
+          alert(err.message);
+        });
       }
     }), _temp));
   }
@@ -1320,26 +1333,37 @@ function (_React$Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__User__["b" /* default */], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 45
         }
       }, function (_ref2) {
         var me = _ref2.data.me;
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_stripe_checkout___default.a, {
-          amount: Object(__WEBPACK_IMPORTED_MODULE_7__lib_calcTotalPrice__["a" /* default */])(me.cart),
-          name: "Sick Fits",
-          description: "Order of ".concat(totalItems(me.cart), " items"),
-          image: me.cart[0].item && me.cart[0].item.image,
-          stripeKey: "pk_test_Db7Hfc4JVWCjJNbg3PHQ3Pkn",
-          currency: "USD",
-          email: me.email,
-          token: function token(res) {
-            return _this2.onToken(res);
-          },
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_apollo__["Mutation"], {
+          mutation: CREATE_ORDER_MUTATION,
+          refetchQueries: [{
+            query: __WEBPACK_IMPORTED_MODULE_9__User__["a" /* CURRENT_USER_QUERY */]
+          }],
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 25
+            lineNumber: 47
           }
-        }, _this2.props.children);
+        }, function (createOrder) {
+          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_stripe_checkout___default.a, {
+            amount: Object(__WEBPACK_IMPORTED_MODULE_7__lib_calcTotalPrice__["a" /* default */])(me.cart),
+            name: "Sick Fits",
+            description: "Order of ".concat(totalItems(me.cart), " items"),
+            image: me.cart[0].item && me.cart[0].item.image,
+            stripeKey: "pk_test_Db7Hfc4JVWCjJNbg3PHQ3Pkn",
+            currency: "USD",
+            email: me.email,
+            token: function token(res) {
+              return _this2.onToken(res, createOrder);
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 52
+            }
+          }, _this2.props.children);
+        });
       });
     }
   }]);
