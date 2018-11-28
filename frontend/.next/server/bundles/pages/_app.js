@@ -996,6 +996,15 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var SEARCH_ITEMS_QUERY = __WEBPACK_IMPORTED_MODULE_5_graphql_tag___default()(_templateObject);
 
+function routeToItem(item) {
+  __WEBPACK_IMPORTED_MODULE_3_next_router___default.a.push({
+    pathname: "/item",
+    query: {
+      id: item.id
+    }
+  });
+}
+
 var AutoComplete =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1078,18 +1087,20 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      Object(__WEBPACK_IMPORTED_MODULE_2_downshift__["resetIdCounter"])();
       return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_DropDown__["c" /* SearchStyles */], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 57
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_downshift___default.a, {
+        onChange: routeToItem,
         itemToString: function itemToString(item) {
           return item === null ? "" : item.title;
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 58
         }
       }, function (_ref3) {
         var getInputProps = _ref3.getInputProps,
@@ -1100,12 +1111,12 @@ function (_React$Component) {
         return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56
+            lineNumber: 69
           }
         }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_apollo__["ApolloConsumer"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 57
+            lineNumber: 70
           }
         }, function (client) {
           return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("input", _extends({
@@ -1123,13 +1134,13 @@ function (_React$Component) {
           }), {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 59
+              lineNumber: 72
             }
           }));
         }), isOpen && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_DropDown__["a" /* DropDown */], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75
+            lineNumber: 88
           }
         }, _this2.state.items.map(function (item, index) {
           return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_DropDown__["b" /* DropDownItem */], _extends({}, getItemProps({
@@ -1139,7 +1150,7 @@ function (_React$Component) {
             highlighted: index === highlightedIndex,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 77
+              lineNumber: 90
             }
           }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
             width: "50",
@@ -1147,10 +1158,15 @@ function (_React$Component) {
             alt: item.title,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 82
+              lineNumber: 95
             }
           }), item.title);
-        })));
+        }), !_this2.state.items.length && !_this2.state.loading && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_DropDown__["b" /* DropDownItem */], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 100
+          }
+        }, "Nothing Found ", inputValue)));
       }));
     }
   }]);

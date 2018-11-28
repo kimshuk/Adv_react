@@ -1,5 +1,5 @@
 import React from "react";
-import Downshift from "downshift";
+import Downshift, { resetIdCounter } from "downshift";
 import Router from "next/router";
 import { ApolloConsumer } from "react-apollo";
 import gql from "graphql-tag";
@@ -23,6 +23,15 @@ const SEARCH_ITEMS_QUERY = gql`
   }
 `;
 
+function routeToItem(item) {
+  Router.push({
+    pathname: "/item",
+    query: {
+      id: item.id
+    }
+  });
+}
+
 class AutoComplete extends React.Component {
   state = {
     items: [],
@@ -43,9 +52,13 @@ class AutoComplete extends React.Component {
     });
   }, 350);
   render() {
+    resetIdCounter();
     return (
       <SearchStyles>
-        <Downshift itemToString={item => (item === null ? "" : item.title)}>
+        <Downshift
+          onChange={routeToItem}
+          itemToString={item => (item === null ? "" : item.title)}
+        >
           {({
             getInputProps,
             getItemProps,
@@ -83,6 +96,9 @@ class AutoComplete extends React.Component {
                       {item.title}
                     </DropDownItem>
                   ))}
+                  {!this.state.items.length && !this.state.loading && (
+                    <DropDownItem>Nothing Found {inputValue}</DropDownItem>
+                  )}
                 </DropDown>
               )}
             </div>
