@@ -893,6 +893,8 @@ var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query SEARCH_IT
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1005,51 +1007,69 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 47
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_downshift__["a" /* default */], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 48
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_apollo__["ApolloConsumer"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 49
-        }
-      }, function (client) {
-        return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("input", {
-          type: "text",
-          onChange: function onChange(e) {
-            e.persist();
+      }, function (_ref3) {
+        var getInputProps = _ref3.getInputProps,
+            getItemProps = _ref3.getItemProps,
+            isOpen = _ref3.isOpen,
+            inputValue = _ref3.inputValue,
+            highlightedIndex = _ref3.highlightedIndex;
+        return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 56
+          }
+        }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_apollo__["ApolloConsumer"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 57
+          }
+        }, function (client) {
+          return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("input", _extends({
+            type: "search"
+          }, getInputProps({
+            type: "search",
+            placeholder: "Search For An Item",
+            id: "search",
+            className: _this2.state.loading ? "loading" : "",
+            onChange: function onChange(e) {
+              e.persist();
 
-            _this2.onChange(e, client);
-          },
+              _this2.onChange(e, client);
+            }
+          }), {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 59
+            }
+          }));
+        }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_DropDown__["a" /* DropDown */], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 74
           }
-        });
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_DropDown__["a" /* DropDown */], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 60
-        }
-      }, this.state.items.map(function (item) {
-        return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_DropDown__["b" /* DropDownItem */], {
-          key: item.id,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 62
-          }
-        }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-          width: "50",
-          src: item.image,
-          alt: item.title,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 63
-          }
-        }), item.title);
-      }))));
+        }, _this2.state.items.map(function (item) {
+          return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_DropDown__["b" /* DropDownItem */], {
+            key: item.id,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 76
+            }
+          }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+            width: "50",
+            src: item.image,
+            alt: item.title,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 77
+            }
+          }), item.title);
+        })));
+      }));
     }
   }]);
 
@@ -11285,7 +11305,7 @@ function validateControlledUnchanged(prevProps, nextProps) {
   });
 }
 
-/* unused harmony default export */ var _unused_webpack_default_export = (Downshift);
+/* harmony default export */ __webpack_exports__["a"] = (Downshift);
 
 
 
