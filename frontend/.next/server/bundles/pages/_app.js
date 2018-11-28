@@ -1084,6 +1084,9 @@ function (_React$Component) {
           lineNumber: 47
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_downshift___default.a, {
+        itemToString: function itemToString(item) {
+          return item === null ? "" : item.title;
+        },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 48
@@ -1123,25 +1126,28 @@ function (_React$Component) {
               lineNumber: 59
             }
           }));
-        }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_DropDown__["a" /* DropDown */], {
+        }), isOpen && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_DropDown__["a" /* DropDown */], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 74
+            lineNumber: 75
           }
-        }, _this2.state.items.map(function (item) {
-          return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_DropDown__["b" /* DropDownItem */], {
+        }, _this2.state.items.map(function (item, index) {
+          return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__styles_DropDown__["b" /* DropDownItem */], _extends({}, getItemProps({
+            item: item
+          }), {
             key: item.id,
+            highlighted: index === highlightedIndex,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 76
+              lineNumber: 77
             }
-          }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+          }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
             width: "50",
             src: item.image,
             alt: item.title,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 77
+              lineNumber: 82
             }
           }), item.title);
         })));
@@ -1475,7 +1481,7 @@ function createClient(_ref) {
         }
       },
       defaults: {
-        cartOpen: true
+        cartOpen: false
       }
     }
   });

@@ -45,7 +45,7 @@ class AutoComplete extends React.Component {
   render() {
     return (
       <SearchStyles>
-        <Downshift>
+        <Downshift itemToString={item => (item === null ? "" : item.title)}>
           {({
             getInputProps,
             getItemProps,
@@ -71,14 +71,20 @@ class AutoComplete extends React.Component {
                   />
                 )}
               </ApolloConsumer>
-              <DropDown>
-                {this.state.items.map(item => (
-                  <DropDownItem key={item.id}>
-                    <img width="50" src={item.image} alt={item.title} />
-                    {item.title}
-                  </DropDownItem>
-                ))}
-              </DropDown>
+              {isOpen && (
+                <DropDown>
+                  {this.state.items.map((item, index) => (
+                    <DropDownItem
+                      {...getItemProps({ item })}
+                      key={item.id}
+                      highlighted={index === highlightedIndex}
+                    >
+                      <img width="50" src={item.image} alt={item.title} />
+                      {item.title}
+                    </DropDownItem>
+                  ))}
+                </DropDown>
+              )}
             </div>
           )}
         </Downshift>
