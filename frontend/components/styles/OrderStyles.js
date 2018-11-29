@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const OrderStyles = styled.div`
   max-width: 1000px;
@@ -29,8 +29,10 @@ const OrderStyles = styled.div`
     margin: 2rem 0;
     padding-bottom: 2rem;
     img {
-      width: 100%;
-      height: 100%;
+      /* width: 100%;
+      height: 100%; */
+      width: 150px;
+      height: 150px;
       object-fit: cover;
     }
   }
