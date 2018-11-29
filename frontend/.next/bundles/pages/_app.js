@@ -1324,10 +1324,11 @@ function (_React$Component) {
             while (1) {
               switch (_context.prev = _context.next) {
                 case 0:
+                  __WEBPACK_IMPORTED_MODULE_5_nprogress___default.a.start();
                   console.log("On Token Called!");
                   console.log(res.id); // manually call the mutation once we have the stripe token
 
-                  _context.next = 4;
+                  _context.next = 5;
                   return createOrder({
                     variables: {
                       token: res.id
@@ -1336,11 +1337,16 @@ function (_React$Component) {
                     alert(err.message);
                   });
 
-                case 4:
+                case 5:
                   order = _context.sent;
-                  console.log(order);
+                  __WEBPACK_IMPORTED_MODULE_4_next_router___default.a.push({
+                    pathname: "/order",
+                    query: {
+                      id: order.data.createOrder.id
+                    }
+                  });
 
-                case 6:
+                case 7:
                 case "end":
                   return _context.stop();
               }
@@ -1363,7 +1369,7 @@ function (_React$Component) {
       return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10__User__["b" /* default */], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 50
         }
       }, function (_ref2) {
         var me = _ref2.data.me;
@@ -1374,7 +1380,7 @@ function (_React$Component) {
           }],
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 48
+            lineNumber: 52
           }
         }, function (createOrder) {
           return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_stripe_checkout___default.a, {
@@ -1390,7 +1396,7 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 53
+              lineNumber: 57
             }
           }, _this2.props.children);
         });
