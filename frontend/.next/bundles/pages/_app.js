@@ -1584,9 +1584,11 @@ var Supreme = __WEBPACK_IMPORTED_MODULE_0_styled_components__["c" /* default */]
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return endpoint; });
+/* unused harmony export prodEndpoint */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return perPage; });
 // This is client side config only - don't put anything in here that shouldn't be public!
 var endpoint = "http://localhost:4444";
+var prodEndpoint = "https://advreact-yoga-prod.herokuapp.com/";
 var perPage = 4;
 
 /***/ }),
@@ -1641,7 +1643,7 @@ function calcTotalPrice(cart) {
 function createClient(_ref) {
   var headers = _ref.headers;
   return new __WEBPACK_IMPORTED_MODULE_1_apollo_boost___default.a({
-    uri:  true ? __WEBPACK_IMPORTED_MODULE_2__config__["a" /* endpoint */] : endpoint,
+    uri:  true ? __WEBPACK_IMPORTED_MODULE_2__config__["a" /* endpoint */] : prodEndpoint,
     request: function request(operation) {
       operation.setContext({
         fetchOptions: {
