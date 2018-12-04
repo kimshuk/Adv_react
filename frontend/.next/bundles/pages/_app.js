@@ -25,7 +25,7 @@ __NEXT_REGISTER_PAGE('/_app', function() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__lib_calcTotalPrice__ = __webpack_require__("./lib/calcTotalPrice.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__lib_formatMoney__ = __webpack_require__("./lib/formatMoney.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__TakeMyMoney__ = __webpack_require__("./components/TakeMyMoney.js");
-var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Cart.js";
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Cart.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query {\n    cartOpen @client\n  }\n"]),
     _templateObject2 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  mutation {\n    toggleCart @client\n  }\n"]);
@@ -173,7 +173,7 @@ var Cart = function Cart() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_transition_group__ = __webpack_require__("./node_modules/react-transition-group/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_transition_group___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_transition_group__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_styled_components__ = __webpack_require__("./node_modules/styled-components/dist/styled-components.browser.es.js");
-var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/CartCount.js";
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/CartCount.js";
 
 
 
@@ -237,7 +237,7 @@ var CartCount = function CartCount(_ref) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_formatMoney__ = __webpack_require__("./lib/formatMoney.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__RemoveFromCart__ = __webpack_require__("./components/RemoveFromCart.js");
-var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/CartItem.js";
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/CartItem.js";
 
 
 
@@ -329,7 +329,7 @@ CartItem.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("./node_modules/next/node_modules/prop-types/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/ErrorMessage.js";
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/ErrorMessage.js";
 
 
 
@@ -390,7 +390,7 @@ DisplayError.defaultProps = {
 DisplayError.propTypes = {
   error: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.object
 };
-/* harmony default export */ __webpack_exports__["a"] = (DisplayError);
+/* unused harmony default export */ var _unused_webpack_default_export = (DisplayError);
 
 /***/ }),
 
@@ -410,7 +410,7 @@ DisplayError.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Nav__ = __webpack_require__("./components/Nav.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Cart__ = __webpack_require__("./components/Cart.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Search__ = __webpack_require__("./components/Search.js");
-var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Header.js";
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Header.js";
 
 
 
@@ -478,7 +478,7 @@ var Header = function Header() {
       fileName: _jsxFileName,
       lineNumber: 65
     }
-  }, "Sick Fits"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Nav__["a" /* default */], {
+  }, "Andy Fits"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Nav__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 68
@@ -514,7 +514,7 @@ var Header = function Header() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("./node_modules/next/head.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_head__);
-var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Meta.js";
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Meta.js";
 
 
 
@@ -579,7 +579,7 @@ var Meta = function Meta() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__User__ = __webpack_require__("./components/User.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Signout__ = __webpack_require__("./components/Signout.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__CartCount__ = __webpack_require__("./components/CartCount.js");
-var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Nav.js";
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Nav.js";
 
 
 
@@ -707,7 +707,7 @@ var Nav = function Nav() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components__ = __webpack_require__("./node_modules/styled-components/dist/styled-components.browser.es.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Header__ = __webpack_require__("./components/Header.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Meta__ = __webpack_require__("./components/Meta.js");
-var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Page.js";
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Page.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  @font-face {\n    font-family: 'radnika_next';\n    src: url('/static/radnikanext-medium-webfont.woff2') format('woff2');\n    font-weight: normal;\n    font-style: normal;\n  }\n  html {\n    box-sizing: border-box;\n    font-size: 10px;\n  }\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  body {\n    padding: 0;\n    margin: 0;\n    font-size: 1.5rem;\n    line-height: 2;\n    font-family: 'radnika_next';\n  }\n  a {\n    text-decoration: none;\n    color: ", ";\n  }\n"]);
 
@@ -819,7 +819,7 @@ function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_graphql_tag__ = __webpack_require__("./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_graphql_tag__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__User__ = __webpack_require__("./components/User.js");
-var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/RemoveFromCart.js";
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/RemoveFromCart.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  mutation removeFromCart($id: ID!) {\n    removeFromCart(id: $id) {\n      id\n    }\n  }\n"]);
 
@@ -968,7 +968,7 @@ Object.defineProperty(RemoveFromCart, "propTypes", {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_lodash_debounce___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_lodash_debounce__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__styles_DropDown__ = __webpack_require__("./components/styles/DropDown.js");
 
-var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Search.js";
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Search.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query SEARCH_ITEMS_QUERY($searchTerm: String!) {\n    items(\n      where: {\n        OR: [\n          { title_contains: $searchTerm }\n          { description_contains: $searchTerm }\n        ]\n      }\n    ) {\n      id\n      image\n      title\n    }\n  }\n"]);
 
@@ -1194,7 +1194,7 @@ function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag__ = __webpack_require__("./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_graphql_tag__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__User__ = __webpack_require__("./components/User.js");
-var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/Signout.js";
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/Signout.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  mutation SIGN_OUT_MUTATION {\n    signout {\n      message\n    }\n  }\n"]);
 
@@ -1255,7 +1255,7 @@ var Signout = function Signout(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ErrorMessage__ = __webpack_require__("./components/ErrorMessage.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__User__ = __webpack_require__("./components/User.js");
 
-var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/TakeMyMoney.js";
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/TakeMyMoney.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  mutation createOrder($token: String!) {\n    createOrder(token: $token) {\n      id\n      charge\n      total\n      items {\n        id\n        title\n      }\n    }\n  }\n"]);
 
@@ -1424,7 +1424,7 @@ function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_graphql_tag__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__("./node_modules/next/node_modules/prop-types/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
-var _jsxFileName = "/Users/developer/code/Adv_react/frontend/components/User.js";
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/components/User.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n  query {\n    me {\n      id\n      email\n      name\n      permissions\n      cart {\n        id\n        quantity\n        item {\n          id\n          title\n          image\n          price\n          description\n        }\n      }\n    }\n  }\n"]);
 
@@ -32520,7 +32520,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react_apollo__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__lib_withData__ = __webpack_require__("./lib/withData.js");
 
-var _jsxFileName = "/Users/developer/code/Adv_react/frontend/pages/_app.js";
+var _jsxFileName = "/Users/andrew/code/Adv_react/frontend/pages/_app.js";
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
